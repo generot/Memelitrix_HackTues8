@@ -1,0 +1,29 @@
+.container {
+  margin: auto;
+  width: 30%;
+  height: 100%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-width : 10px;
+  box-sizing: border-box;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.form_text{
+    text-align: center;
+}
+.submit{
+    background-color:red;
+
+}
+.submit:hover{
+       background-color:green;
+    }
