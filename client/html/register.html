@@ -1,16 +1,18 @@
 <!DOCTYPE html>   
 <html>  
 <link rel="stylesheet" href="../static/login.css">
+<script src="../js/register.js"></script>
 <head></head>
 <body>  
 
-	<form action="login.html" method="get">
+	<form onsubmit ="return myFunction(this)" action="login.html" method="post">
 		<div class="container">
 			<div class = "form_text">
 				<label for="uname"><b>User<b></b></b></label><br>
 				<input type="text" placeholder="Enter Username" name="uname" required=""><br>
 				<label for="pswrd"><b>Password<b></b></label><br>
 				<input id = "pass"type="password" placeholder="Password" name="pswrd" required=""><br>	
+				<input id = "repass" type = "password" placeholder="rePassword" name = "repswrd" required="">
 			
 			</div>
 				<button  class = "submit" type="submit">Register</button>
