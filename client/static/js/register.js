@@ -20,6 +20,7 @@ async function register(form) {
 	if(obj["code"] == 200) {
 		//Redirect to profile
 		alert("Sign up successful.");
+		window.location.replace("/");
 	} else {
 		alert("User already exists.");
 		window.location.replace("/register");
