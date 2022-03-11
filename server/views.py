@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request
 import db
+
 views = Blueprint(__name__, "views")
 
 
