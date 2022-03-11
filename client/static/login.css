@@ -22,7 +22,8 @@ input[type=text], input[type=password] {
 .form_text{
   text-align: center;
 }
-.submit{
+
+/* .submit{
     background-color:#404a3b;
     color:white;
     border:none;
@@ -40,25 +41,76 @@ input[type=text], input[type=password] {
 
 .submit:active{
   background-color:#b0ad88;
+} */
+
+/* .submit-underline:after {
+  content: '';
+  position: relative;
+  width: 5vw;
+  transform: scaleX(0);
+  height: 0.5em;
+  top: 0.5em;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}  */
+
+ .submit{
+  background-color: rgba(69, 69, 69, 0);
+  border: none;
+  color:white !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 550;
+  font-size: 1.3em;
+  margin-top:6vh;
+}
+
+.submit-underline:after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.2em;
+  bottom: 0.7em;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.submit-underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .center-block{
+<<<<<<< HEAD
   margin-left:0vw;
+=======
+  display:inline-block;
+  margin-left:13vw;
+>>>>>>> 4dc96faed02be6af7cc74211bdb628ccde500204
   margin-top:30vh;
   width:30vw;
-  height: 40vh; 
-  background-color:#a7f58c;
-  color:gray;
+  height: 45vh; 
+  /* background-color:#a7f58c; */
+  background-color: #07c8d6;
+  opacity: 0.85;
+  color:white;
   text-align:center;
   border-radius:25px;
-  padding-top:5vh;
+  padding-top:4vh;
   border-style: solid;
   border-color: #7c9971;
   border-width: 0.35em;
 }
 
 .user-pass{
+  color: white !important;
   font-weight: 550;
   font-size: 1.05em;
   letter-spacing: 0.06em;
+  margin-top: 2vh;
 }

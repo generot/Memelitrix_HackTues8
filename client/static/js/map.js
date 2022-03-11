@@ -18,8 +18,8 @@ function error(err) {
 //map render
 tt.setProductInfo('myMap', '1');
 
-//pishka function - very important(dosta kur indeed)
-function pishka() {
+
+function getCoords() {
 
     return new Promise(resolve => {
         navigator.geolocation.getCurrentPosition(clb => {
@@ -33,7 +33,7 @@ function pishka() {
 
 async function initMap(Markers){
 
-    let coords = await pishka()
+    let coords = await getCoords()
     var long = coords.longitude
     var lat = coords.latitude
 
