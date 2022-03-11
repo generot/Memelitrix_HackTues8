@@ -34,8 +34,8 @@
                                 Profile
                                 </a>
                                 <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                                <li><a class="hover-underline-animation dropdown-item" href="login">Log in</a></li>
-                                <li><a class="hover-underline-animation dropdown-item" href="register">Sign up</a></li>
+                                <li><a class="hover-underline-animation dropdown-item" href="login" id="login_drop">Log in</a></li>
+                                <li><a class="hover-underline-animation dropdown-item" href="register" id="register_drop">Sign up</a></li>
                                 </ul>
                             </li>
                             </ul>
@@ -44,5 +44,8 @@
     </nav>
         <h1>это лапы</h1> 
     </div>
+
+    <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
+    <script>editAfterLogin();</script>
 </body>
 </html>
