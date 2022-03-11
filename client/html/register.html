@@ -1,11 +1,11 @@
 <!DOCTYPE html>   
 <html>  
-<link rel="stylesheet" href="../static/login.css">
-<script src="../static/register.js"></script>
+<link rel="stylesheet" href="{{ url_for('static',  filename = 'login.css') }}">
+<script src="{{ url_for('static',  filename = 'js/register.js') }}"></script>
 <head></head>
 <body>  
 
-	<form onsubmit ="return myFunction(this)" action="login.html" method="post">
+	<form onsubmit = "return submit(this)" action="login.html" method="post">
 		<div class="container">
 			<div class = "form_text">
 				<label for="uname"><b>User<b></b></b></label><br>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>   
 <html>  
-<link rel="stylesheet" href="{{ url_for('static', 'login.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'login.css') }}">
 <head>
-	<script src="{{ url_for('static', 'js/requests.js') }}"></script>
-	<script src="{{ url_for('static', 'js/login.js') }}"></script>
+	<script src="{{ url_for('static',  filename = 'js/requests.js') }}"></script>
+	<script src="{{ url_for('static',  filename = 'js/login.js') }}"></script>
 </head>
 <body>  
 
@@ -11,12 +11,12 @@
 		<div class="container">
 			<div class = "form_text">
 				<label for="uname"><b>User<b></b></b></label><br>
-				<input type="text" placeholder="Enter Username" name="uname" required=""><br>
+				<input type="text" placeholder="Enter Username" name="username" required=""><br>
 				<label for="pswrd"><b>Password<b></b></label><br>
-				<input id = "pass"type="password" placeholder="Password" name="pswrd" required=""><br>	
-			
+				<input id = "pass"type="password" placeholder="Password" name="password" required=""><br>
 			</div>
-				<button  class = "submit" type="submit">Register</button>
+		
+			<button  class = "submit">Login</button>
 
 		</div>
 	</form>
