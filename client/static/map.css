@@ -2,6 +2,7 @@
     width: 40%;
     overflow:scroll;
 }
+
 .hidden-button{
     background: transparent;
     border:none;
@@ -53,6 +54,9 @@
 }
 
 @media (max-width: 768px) {
+    .bckg{
+        width: 40%;
+    }
     .device-size{
         height:auto;
         width:100vw;
@@ -67,3 +71,66 @@
     }
 }
 
+.task-button{
+    border:none;
+    text-align:center;
+    vertical-align: middle;
+    position: relative;
+    left:10vw;
+    margin-bottom:2vh;
+    margin-top:1vh;
+    width:10vw;
+    background-color:#4c917f;
+    color:white;
+    border-radius:5px;
+}
+
+.task-button:hover{
+    background-color:#549c89;
+}
+
+.task-button:active{
+    background-color:#668251;
+}
+
+.task-create-background{
+    display: none;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.task-create{
+    display: block;
+    position: inherit;
+    top: 30vh;
+    left: 35vw;
+    z-index: 3;
+    padding: 10;
+    width: 30vw;
+    height: 40vh;
+    border-radius : 5px;
+    background: #7f7a1a; 
+    opacity: 0.65;
+    text-align:center;
+}
+
+.konq-vihar{
+    margin-top:5vh;
+    border:none;
+    border-radius:5px;
+    width:10vw;
+    color:white;    
+    background-color:#b7ae4e;
+}
+
+.konq-vihar:hover{
+    background-color:#cac051;
+}
+
+.konq-vihar:active{
+    background-color: #ecd949
+}

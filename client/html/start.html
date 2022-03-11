@@ -35,7 +35,7 @@
                                                 </a>
                                                 <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown" style="float:left;">
                                                 <li><a class="hover-underline-animation dropdown-item" href="login" id="login_drop">Log in</a></li>
-                                                <li><a class="hover-underline-animation dropdown-item" href="register" id="reg_drop">Sign up</a></li>
+                                                <li><a class="hover-underline-animation dropdown-item" href="register" id="register_drop">Sign up</a></li>
                                                 </ul>
                                         </li>
                                         </ul>
@@ -46,26 +46,7 @@
                 <div style="height:1000px;"><h1 style="color:white">Pishki</h1><h2 style="color:red">Sussy Baki</h2></div>
         </div>
 
-        <script>
-                console.log("Here...");
-
-                let user = window.localStorage.getItem("user");
-                let loginBtn = document.querySelector("#login_drop");
-                let registerBtn = document.querySelector("#reg_drop");
-
-                if(user) {
-                        console.log("Name defined...");
-
-                        loginBtn.innerHTML = user.username;
-
-                        registerBtn.innerHTML = "Sign out";
-                        registerBtn.signOut = true;
-                        registerBtn.setAttribute("href", "");
-                        registerBtn.setAttribute("onclick", `
-                                window.localStorage.clear();
-                                window.location.replace("/");
-                        `);
-                }
-        </script>
+        <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
+        <script>editAfterLogin();</script>
 </body>
 </html>
