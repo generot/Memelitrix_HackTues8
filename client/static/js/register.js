@@ -6,6 +6,11 @@ async function register(form) {
 		password: form.querySelector("#pass").value
 	};
 
+	if(user.username.length <= 4 || user.username.length >= 25){
+		alert("Username must be between 4 and 25 characters.");
+		window.location.replace("/register");
+	}
+
 	let response = null;
 
 	try {
@@ -35,6 +40,5 @@ async function verifyAndRegister(form){
 		await register(form);
 	}else{
 		alert("Passwords don't match");
-
 	}
 }
