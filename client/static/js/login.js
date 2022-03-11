@@ -21,11 +21,12 @@ async function login(form) {
     console.log(message)
 
     if(code == 200){
-        window.localStorage.setItem("user", {
+        let obj = {
             username: response["username"],
-            id: response[id]
-        });
-        
+            id: response["id"]
+        }
+
+        window.localStorage.setItem("user", JSON.stringify(obj));
         window.location.replace("/");
     }else{
         //kod za greshna parola

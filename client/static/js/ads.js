@@ -26,3 +26,18 @@ function adCreate(title, desc) {
     tmp.innerHTML = template;
     container.appendChild(tmp.content.firstElementChild);
 }
+
+async function adPublish(title_, desc_) {
+    const route = "/ads/add";
+    const KURdinati = await pishka();
+    const user = JSON.parse(window.localStorage.getItem("user"));
+
+    adCreate(title, desc);
+
+    sendToRoute({
+        title: title_,
+        description: desc_,
+        id: user.id,
+        location: [KURdinati.longitute, KURdinati.latitude]
+    }, route);
+}

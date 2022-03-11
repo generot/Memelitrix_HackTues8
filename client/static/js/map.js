@@ -1,18 +1,16 @@
 var map
 //get user location
 
-var options = {
-        
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
+var options = {     
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
 };
 
 function success(pos) {
     var crd = pos.coords;
 
     return [crd.latitude, crd.longtitude];
-
 }
 
 function error(err) {
@@ -22,7 +20,7 @@ function error(err) {
 //map render
 tt.setProductInfo('myMap', '1');
 
-//pishka function - very important
+//pishka function - very important(dosta kur indeed)
 function pishka() {
 
     return new Promise(resolve => {

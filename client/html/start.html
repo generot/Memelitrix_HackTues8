@@ -20,27 +20,24 @@
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                                <li class="nav-item">
-                                                        <a class="hover-underline-animation-current current-page nav-link active navbar-font" aria-current="page" >Home</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                        <a class="hover-underline-animation nav-link navbar-font" href="about_us">About us</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                        <a class="hover-underline-animation  nav-link navbar-font" href="map">Tasks</a>
-                                                </li>
-                                                <li class="nav-item dropdown">
-                                                        <a class="nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Profile
-                                                        </a>
-                                                        <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown" style="float:left;">
-                                                        <li><a class="hover-underline-animation dropdown-item" href="login" id="login_drop">Log in</a></li>
-                                                        <li><a class="hover-underline-animation dropdown-item" href="register" id="reg_drop">Sign up</a></li>
-                                                        </ul>
-                                                </li>
-                                                <li class="nav-item">
-                                                        <a class="hover-underline-animation-current current-page nav-link active navbar-font" aria-current="page" >Home</a>
-                                                </li>
+                                        <li class="nav-item">
+                                                <a class="hover-underline-animation-current current-page nav-link active navbar-font" aria-current="page" >Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="hover-underline-animation nav-link navbar-font" href="about_us">About us</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="hover-underline-animation  nav-link navbar-font" href="map">Tasks</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Profile
+                                                </a>
+                                                <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown" style="float:left;">
+                                                <li><a class="hover-underline-animation dropdown-item" href="login" id="login_drop">Log in</a></li>
+                                                <li><a class="hover-underline-animation dropdown-item" href="register" id="register_drop">Sign up</a></li>
+                                                </ul>
+                                        </li>
                                         </ul>
                                 </div>
                         </div>
@@ -49,26 +46,7 @@
                 <div style="height:1000px;"><h1 style="color:white">Pishki</h1><h2 style="color:red">Sussy Baki</h2></div>
         </div>
 
-        <script>
-                console.log("Here...");
-
-                let user = window.localStorage.getItem("user");
-                let loginBtn = document.querySelector("#login_drop");
-                let registerBtn = document.querySelector("#reg_drop");
-
-                if(user) {
-                        console.log("Name defined...");
-
-                        loginBtn.innerHTML = user.username;
-
-                        registerBtn.innerHTML = "Sign out";
-                        registerBtn.signOut = true;
-                        registerBtn.setAttribute("href", "");
-                        registerBtn.setAttribute("onclick", `
-                                window.localStorage.clear();
-                                window.location.replace("/");
-                        `);
-                }
-        </script>
+        <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
+        <script>editAfterLogin();</script>
 </body>
 </html>

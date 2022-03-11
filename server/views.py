@@ -52,7 +52,7 @@ def jobs_page():
     tasks = get_tasks()
     return render_template("profile.html", tasks = [1, 2, 3, 4, 5], jobs = [1, 2, 3])
 
-@views.route("/ads/add")
+@views.route("/ads/add", methods=["POST"])
 def accept_task():
     req = request.get_data()
     data = json.loads(req)
