@@ -12,7 +12,7 @@ def add_user(username, password):
     #check if user exists
     for i in users.find({}):
         if i["name"] == username:
-            return {"code": 200, "message": "User registered successfully"}
+            return {"code": 400, "message": "User already exists"}
 
     #password hashing
     password = password.encode()
@@ -24,7 +24,7 @@ def add_user(username, password):
     #insert user
     users.insert_one({'name': username, 'password': password_hash})
 
-    return {"code": 400, "message": "User already exists"}
+    return {"code": 200, "message": "User registered successfully"}
 
 def check_user(username, password):
     #connection
@@ -44,3 +44,33 @@ def check_user(username, password):
                 return {"code": 400, "message": "Wrong password"}
     
     return {"code": 400, "message": "User does not exist"}
+
+def add_ad(title, description, username, location):
+    #connection
+    client = pymongo.MongoClient(uri)
+    db = client["data"]
+    ads = db["ads"]
+
+    #insert ad
+    error = ads.insert_one({'title': title, 'description': description, 'username': username, "location": location})
+
+    if(error is None):
+        return {"code": 400, "message": "Internal server error"}
+
+    return {"code": 200, "message": "Ad added successfully"}
+
+def get_ads():
+    #connection
+    client = pymongo.MongoClient(uri)
+    db = client["data"]
+    ads = db["ads"]
+
+    #get ads
+    ads_list = []
+    for i in ads.find({}):
+        ads_list.append(i)
+
+    if ads_list == []:
+        return {"code": 400, "message": "No ads"}
+
+    return {"code": 200, "message": "Ads retrieved successfully", "ads": ads_list}
