@@ -80,17 +80,17 @@
     margin-bottom:2vh;
     margin-top:1vh;
     width:10vw;
-    background-color:#4c917f;
+    background-color:#009c9a;
     color:white;
     border-radius:5px;
 }
 
 .task-button:hover{
-    background-color:#549c89;
+    background-color:#02aca9;
 }
 
 .task-button:active{
-    background-color:#668251;
+    background-color:#25b99f;
 }
 
 .task-create-background{
@@ -112,8 +112,8 @@
     padding: 10;
     width: 30vw;
     height: 40vh;
-    border-radius : 5px;
-    background: #7f7a1a; 
+    border-radius : 15px;
+    background: #0096a1; 
     opacity: 0.65;
     text-align:center;
 }
@@ -121,16 +121,16 @@
 .konq-vihar{
     margin-top:5vh;
     border:none;
-    border-radius:5px;
+    border-radius:100px;
     width:10vw;
     color:white;    
-    background-color:#b7ae4e;
+    background-color:#11c1a0;
 }
 
 .konq-vihar:hover{
-    background-color:#cac051;
+    background-color:#11c1a0;
 }
 
 .konq-vihar:active{
-    background-color: #ecd949
+    background-color: #a7f58c;
 }
