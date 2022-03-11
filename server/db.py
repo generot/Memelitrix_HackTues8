@@ -1,7 +1,12 @@
 import pymongo
 import hashlib
+import certifi
+import os
 
 uri = "mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority"
+uri_nasko = "mongodb+srv://Nakov:GolemataPatka@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority" 
+
+uri = uri_nasko
 
 def add_user(username, password):
     #connection
@@ -12,7 +17,7 @@ def add_user(username, password):
     #check if user exists
     for i in users.find({}):
         if i["name"] == username:
-            return {"code": 200, "message": "User registered successfully"}
+            return {"code": 400, "message": "User already exists"}
 
     #password hashing
     password = password.encode()
@@ -24,7 +29,7 @@ def add_user(username, password):
     #insert user
     users.insert_one({'name': username, 'password': password_hash})
 
-    return {"code": 400, "message": "User already exists"}
+    return {"code": 200, "message": "User registered successfully"}
 
 def check_user(username, password):
     #connection
