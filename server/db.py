@@ -1,5 +1,3 @@
-from audioop import add
-import os
 import pymongo
 import hashlib
 
@@ -12,16 +10,35 @@ def add_user(username, password):
     #check if user exists
     for i in users.find({}):
         if i["name"] == username:
-            return False
+            return {"code": 200, "message": "User registered successfully"}
 
     #password hashing
     password = password.encode()
-    salt = os.urandom(32)
+    salt = 32*b'\x00'
     password_hash = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
+
+    print(password_hash)
 
     #insert user
     users.insert_one({'name': username, 'password': password_hash})
 
-    return True
+    return {"code": 400, "message": "User already exists"}
 
-print(add_user("asdf", "123"))
+def check_user(username, password):
+    #connection
+    client = pymongo.MongoClient("mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    db = client["data"]
+    users = db["users"]
+
+    for i in users.find({}):
+        if i["name"] == username:
+            password = password.encode()
+            salt = 32*b'\x00'
+            password_hash = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
+
+            if i["password"] == password_hash:
+                return {"code": 200, "message": "User logged in successfully"}
+            else:
+                return {"code": 400, "message": "Wrong password"}
+    
+    return {"code": 400, "message": "User does not exist"}
