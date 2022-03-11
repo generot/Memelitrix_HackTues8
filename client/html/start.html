@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}">
 </head>
 <body>
-        <div class="background-gradient" style="height:500px">
+        <script src="{{ url_for('static',  filename = 'bootstrap/js/bootstrap.bundle.js') }}"></script>
+        <div class="background-gradient" style="height:45vh">
                 <nav class="navbar navbar-expand-lg navbar-light" style="float:right;">
                         <div class="container-fluid">
                                 <a class="navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
@@ -33,8 +34,8 @@
                                                 Profile
                                                 </a>
                                                 <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                                                <li><a class="hover-underline-animation dropdown-item" href="login">Log in</a></li>
-                                                <li><a class="hover-underline-animation dropdown-item" href="register">Sign up</a></li>
+                                                <li><a class="hover-underline-animation dropdown-item" href="login" id="login_drop">Log in</a></li>
+                                                <li><a class="hover-underline-animation dropdown-item" href="register" id="reg_drop">Sign up</a></li>
                                                 </ul>
                                         </li>
                                         </ul>
@@ -42,9 +43,29 @@
                         </div>
                 </nav>
                 <h1>Hello niggers</h1>
-                <script src="{{ url_for('static',  filename = '/bootstrap/js/bootstrap.bundle.js') }}"></script>
-                <divstyle="height:1000px;"><h1 style="color:white">Pishki</h1><h2 style="color:red">Sussy Baki</h2></div>
+                <div style="height:1000px;"><h1 style="color:white">Pishki</h1><h2 style="color:red">Sussy Baki</h2></div>
         </div>
-       
+
+        <script>
+                console.log("Here...");
+
+                let user = window.localStorage.getItem("user");
+                let loginBtn = document.querySelector("#login_drop");
+                let registerBtn = document.querySelector("#reg_drop");
+
+                if(user) {
+                        console.log("Name defined...");
+
+                        loginBtn.innerHTML = user.username;
+
+                        registerBtn.innerHTML = "Sign out";
+                        registerBtn.signOut = true;
+                        registerBtn.setAttribute("href", "");
+                        registerBtn.setAttribute("onclick", `
+                                window.localStorage.clear();
+                                window.location.replace("/");
+                        `);
+                }
+        </script>
 </body>
 </html>

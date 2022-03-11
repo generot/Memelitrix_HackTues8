@@ -3,20 +3,40 @@
         <script src="{{ url_for('static',  filename = '/js/ads.js') }}"></script>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AbilitY</title>
-    <link rel="stylesheet" href="{{ url_for('static',  filename = 'bootstrap/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',  filename = 'map.css') }}">
+        <!-- map render -->
+
+        <meta http-equiv='X-UA-Compatible' content='IE=Edge' />
+        <meta charset='UTF-8'>
+        <title>My Map</title>
+        <meta name='viewport'
+              content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    
+        <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css'/>
+        <style>
+           #map {
+               width: 50vw;
+               height: 50vh;
+           }
+        </style>
+
+        <!-- other -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AbilitY</title>
+        <link rel="stylesheet" href="{{ url_for('static',  filename = '/bootstrap/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',  filename = 'map.css') }}">
 </head>
 
+
+
+<script>(function(){ window.SS = window.SS || {}; SS.Require = function (callback){ if (typeof callback === 'function') { if (window.SS && SS.EventTrack) { callback(); } else { var siteSpect = document.getElementById('siteSpectLibraries'); var head = document.getElementsByTagName('head')[0]; if (siteSpect === null && typeof head !== 'undefined') { siteSpect = document.createElement('script'); siteSpect.type = 'text/javascript'; siteSpect.src = '/__ssobj/core.js+ssdomvar.js+generic-adapter.js';siteSpect.async = true; siteSpect.id = 'siteSpectLibraries'; head.appendChild(siteSpect); } if (window.addEventListener){ siteSpect.addEventListener('load', callback, false); } else { siteSpect.attachEvent('onload', callback, false); } } } };})(); </script> </head>
 <body>
     <script src="{{ url_for('static',  filename = 'bootstrap/js/bootstrap.bundle.js') }}"></script>
 
-    <div class="background-gradient" style="height:100vh;width:35vw">
-        <nav class="navbar navbar-expand-lg navbar-light" style="float:left;">
+    <div class="device-size background-gradient">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                     <a class="navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
                     <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,10 +66,14 @@
                     </div>
             </div>
     </nav>
-    <br><br><br>
+    
+    
+
+   
         <!-- <h1>eta karta</h1> -->
         <p><h1>Eta task</h1></p>
         <h1 class="horosho">Mui zdesь</h1>
+
         <div class="adds-big-container" id="bigCont">
 
                 <div class = "adds-small-container">
@@ -76,6 +100,14 @@
                         </div>
                 </div>
         </div>
+    </div>
+    <div>
+       
+        <div id='map' class='map'>
+                <script src = 'https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js'></script>
+                <script src = "{{ url_for('static', filename = 'js/map.js') }}"></script>
+                </div>
+    </div>
    
 </body>
 </html>
