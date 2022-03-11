@@ -9,4 +9,4 @@ app = Flask(__name__, template_folder = temp_dir, static_folder = stat_dir)
 app.register_blueprint(views, url_prefix = "/")
 
 if __name__ == "__main__":
-    app.run(debug=True, host="memlitrix-ability.herokuapp.com")
+    app.run(debug=True, host="https://memlitrix-ability.herokuapp.com/")
