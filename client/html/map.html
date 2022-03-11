@@ -70,20 +70,23 @@
                 document.getElementById("task-create").style.display = "inline";
             }
 
-            function lapai() {
+            function closeTask() {
                 document.getElementById("task-create").style.display = "none";
+                document.getElementById("title").value = "";
+                document.getElementById("pass").value = "";
             }
         </script>
 
         <h1 style="text-align:center;">Tasks</h1>
-        <button class="task-button" onclick="createTask()">Create a task</button>
+        <button class="task-button task-button-underline" style="align-self: center;font-size:1.3em;" onclick="createTask()">Create a task</button>
         <div display="none" id="task-create" class="task-create-background">
             <div class="task-create"><br>
-                <label for="title">Title</label><br>
-                <input type="title" placeholder="Title of the task" id="title" style="border-radius:10px;"><br>
-                <label class="user-pass" for="pswrd">Description</label><br>
-                <textarea id="pass" placeholder="Description" id="pass" style="resize:none;border-radius:15px;width:15vw;height:20vh;"></textarea><br>
-                <button onclick="lapai()" class="konq-vihar">Create</button>
+                <label for="title-desc">Title</label><br>
+                <input content="" type="title" placeholder="Title of the task" id="title" style="border-radius:10px;width:26vw;"><br>
+                <label class="title-desc" for="pswrd">Description</label><br>
+                <textarea content="" id="pass" placeholder="Description" id="pass" style="resize:none;border-radius:15px;width:26vw;height:25vh;"></textarea><br>
+                <button onclick="lapai()" class="konq-vihar konq-vihar-underline" style="margin-right:3vw;">Create</button>
+                <button onclick="closeTask()" class="konq-vihar konq-vihar-underline" style="margin-left:3vw;">Cancel</button>
             </div>
         </div>
 

@@ -76,21 +76,31 @@
     text-align:center;
     vertical-align: middle;
     position: relative;
-    left:10vw;
+    left:11.25vw;
     margin-bottom:2vh;
     margin-top:1vh;
-    width:10vw;
-    background-color:#009c9a;
-    color:white;
+    width:auto;
+    background-color:rgba(69, 69, 69, 0);
+    color: white;
     border-radius:5px;
 }
 
-.task-button:hover{
-    background-color:#02aca9;
+.task-button-underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.2em;
+    bottom: 0.05em;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
 }
-
-.task-button:active{
-    background-color:#25b99f;
+  
+.task-button-underline:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .task-create-background{
@@ -114,23 +124,41 @@
     height: 40vh;
     border-radius : 15px;
     background: #0096a1; 
-    opacity: 0.65;
+    opacity: 0.8;
     text-align:center;
 }
 
 .konq-vihar{
-    margin-top:5vh;
+    width:auto;
+    background-color:rgba(69, 69, 69, 0);
+    color:white !important;
     border:none;
-    border-radius:100px;
-    width:10vw;
-    color:white;    
-    background-color:#11c1a0;
+    text-align:center;
+    position:relative;
+    font-size: 1.2em;
+}
+  
+.konq-vihar-underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.2em;
+    bottom: 0.05em;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.konq-vihar-underline:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
-.konq-vihar:hover{
-    background-color:#11c1a0;
-}
-
-.konq-vihar:active{
-    background-color: #a7f58c;
+.title-desc{
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 550 !important;
+    color: #fff !important;
+    font-size: 0.875em;
 }
