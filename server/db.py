@@ -41,9 +41,9 @@ def check_user(username, password):
             if i["password"] == password_hash:
                 return {"code": 200, "message": "User logged in successfully"}
             else:
-                return {"code": 400, "message": "Wrong password"}
+                return {"code": 400, "message": "Username or password is incorrect"}
     
-    return {"code": 400, "message": "User does not exist"}
+    return {"code": 400, "message": "Username or password is incorrect"}
 
 def add_ad(title, description, username, location):
     #insert ad
