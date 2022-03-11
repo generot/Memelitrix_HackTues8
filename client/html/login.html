@@ -24,7 +24,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                    <a class="nav-link navbar-font" aria-current="page" href="start">Home</a>
+                                    <a class="nav-link navbar-font" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
                                     <a class="nav-link navbar-font" href="about_us">About us</a>
@@ -46,7 +46,7 @@
             </div>
     </nav>
 
-		<form onsubmit="login(this)">
+		<form onsubmit="return login(this)">
 			<div class="container">
 				<div class = "form_text">
 					<label for="uname"><b>User<b></b></b></label><br>
@@ -55,7 +55,7 @@
 					<input id = "pass"type="password" placeholder="Password" name="pswrd" required=""><br>	
 				
 				</div>
-					<button  class = "submit" type="submit">Register</button>
+					<button  class = "submit">Register</button>
 
 			</div>
 		</form>
