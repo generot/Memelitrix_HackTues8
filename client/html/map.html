@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+        <script>
+                var map;
+                var prevMarker;
+        </script>
+
         <script src="{{ url_for('static',  filename = '/js/requests.js') }}"></script>
         <script src="{{ url_for('static',  filename = '/js/ads.js') }}"></script>
 
@@ -75,6 +80,13 @@
                 document.getElementById("title").value = "";
                 document.getElementById("pass").value = "";
             }
+
+            function lapai(){
+                let title = document.querySelector("#task-title");
+                let desc = document.querySelector("#task-desc");
+
+                adPublish(title.value, desc.value);
+            }
         </script>
 
         <h1 style="text-align:center;">Tasks</h1>
@@ -112,6 +124,10 @@
 
     <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
     <script>editAfterLogin();</script>
+
+    <script>
+        adFetch();
+    </script>
    
 </body>
 </html>
