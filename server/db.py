@@ -1,6 +1,5 @@
 import pymongo
 import hashlib
-import certifi
 import os
 
 uri = "mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority"
