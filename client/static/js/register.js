@@ -26,3 +26,15 @@ async function register(form) {
 		window.location.replace("/register");
 	}
 }
+async function verifyAndRegister(form){
+	let pass = {
+		password1: form.querySelector("#pass").value,
+		password2: form.querySelector("#Cpass").value
+	};
+	if(pass.password1 == pass.password2){
+		await register(form);
+	}else{
+		alert("Passwords don't match");
+
+	}
+}
