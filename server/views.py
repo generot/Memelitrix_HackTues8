@@ -5,10 +5,10 @@ views = Blueprint(__name__, "views")
 
 @views.route("/")
 def home():
-    return render_template("login.html")
+    return render_template("index.html")
 
 @views.route("/login")
-def home():
+def login_page():
     return render_template("login.html")
 
 
@@ -26,7 +26,10 @@ def login():
     username = data["username"]
     password = data["password"]
 
-    return db.check_user(username, password)
+    a = db.check_user(username, password)
+    print(a)
+
+    return a
 
 @views.route("/ads/add")
 def add_ad():
