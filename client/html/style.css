@@ -1,11 +1,15 @@
 .background-gradient{
-    background-color: #7f53ac;
-    background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+    background-color: #4EAAE3;
+    background-image: linear-gradient(315deg, #a7f58c 0%, #4EAAE3 100%);
     color:white;
 }
 
 .navbar-font{
-    color:white !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: bold !important;
+    color: #fff !important;
+    font-size: 0.875em;
+    letter-spacing: 0.063em;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -24,5 +28,8 @@
 }
 
 .current-page{
-    color: rgb(102,180,255) !important;
+    color: #7980cd !important;
+    text-decoration: underline;
+    text-decoration-color: #4eaae3;
+    text-decoration-thickness: 0.3em;
 }
