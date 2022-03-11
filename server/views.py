@@ -35,8 +35,3 @@ def add_ad():
 @views.route("/ads")
 def asdf():
     pass
-
-    if db.add_user(username, password):
-        return {"code": 200, "message": "User registered successfully"}
-    else:
-        return {"code": 400, "message": "User already exists"}
