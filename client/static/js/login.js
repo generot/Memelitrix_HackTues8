@@ -6,20 +6,16 @@ async function login(form) {
         password: form.querySelector("#pass").value
     }
 
-    console.log(user);
-
     if(user.username.length < 4 || user.username.length > 25) {
         //Njakuv pop up mozhe tuka
         return;
     }
 
-    console.log("asdf")
-
-    let query = queryStringParams(route, [["username", user.username], ["password", user.password]])
+    let query = queryStringParams(route, [["username", user.username], ["password", user.password]]);
 
     let response = await getFromRoute(query);
+    response = await response.json();
 
-    console.log(response);
     let code = response["code"];
     let message = response["message"];
 

@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="{{ url_for('static',  filename = '/bootstrap/css/bootstrap.css') }}" />
         <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}" />
         <script src="{{ url_for('static',  filename = 'js/register.js') }}"></script>
+        <script src="{{ url_for('static',  filename = 'js/requests.js') }}"></script>
 </head>
 
 <body>
@@ -41,9 +42,9 @@
                                                         </a>
                                                         <ul class="dropdown-menu navbar-font"
                                                                 aria-labelledby="navbarDropdown">
-                                                                <li><a class="dropdown-item" href="login">Log in</a>
+                                                                <li><a class="hover-underline-animation dropdown-item" href="login">Log in</a>
                                                                 </li>
-                                                                <li><a class="current-page dropdown-item">Sign up</a>
+                                                                <li><a class="hover-underline-animation-current current-page dropdown-item">Sign up</a>
                                                                 </li>
                                                         </ul>
                                                 </li>
@@ -51,19 +52,25 @@
                                 </div>
                         </div>
                 </nav>
-                <form onsubmit="return login(this)">
                         <div class="container">
+<<<<<<< HEAD
+                                <div class = "form_text" id="form_register">
+                                        <label for="uname"><b>User<b></b></b></label><br>
+                                        <input type="text" placeholder="Enter Username" name="uname" required="" id="usernm"><br>
+                                        <label for="pswrd"><b>Password<b></b></label><br>
+                                        <input id = "pass"type="password" placeholder="Password" name="pswrd" required="" id="pass"><br>
+=======
                                 <div class = "form_text">
                                         <label for="username"><b>User<b></b></b></label><br>
                                         <input type="text" placeholder="Enter Username" name="username" required=""><br>
                                         <label for="pasword"><b>Password<b></b></label><br>
                                         <input id = "pass"type="password" placeholder="Password" name="password" required=""><br>	
+>>>>>>> 53350eb6f10b862074ead739e000a1693dcffdcc
                                 
                                 </div>
-                                        <button  class = "submit">Register</button>
+                                        <button  class = "submit" onclick="register(document.getElementById('form_register'))">Register</button>
         
                         </div>
-                </form>
         </div>
         
 </body>
