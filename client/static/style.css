@@ -20,7 +20,7 @@
 }
   
 .custom-toggler.navbar-toggler{
-    border-color: rgb(202,229,255)
+    border-color: rgb(202,229,255);
 }
 .navbar-toggler:focus,
 .navbar-toggler:active,

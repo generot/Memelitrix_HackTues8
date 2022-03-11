@@ -7,17 +7,15 @@
 
         <meta http-equiv='X-UA-Compatible' content='IE=Edge' />
         <meta charset='UTF-8'>
-        <title>My Map</title>
-        <meta name='viewport'
-              content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
-    
-        <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css'/>
+        <title>AbilitY</title>
+        <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
         <style>
-           #map {
-               width: 50vw;
-               height: 50vh;
-           }
-        </style>
+            #map {
+                width: auto;
+                height: 100vh;
+            }
+         </style>
+        <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css'/>
 
         <!-- other -->
         <meta charset="UTF-8">
@@ -68,14 +66,8 @@
                     
             </div>
         </nav>
-    
-    
 
-   
-        <!-- <h1>eta karta</h1> -->
-        <p><h1>Eta task</h1></p>
-        <h1 class="horosho">Mui zdesь</h1>
-
+        <h1 style="text-align:center;">Tasks</h1>
         <div class="adds-big-container" id="bigCont">
 
                 <div class = "adds-small-container">
@@ -156,7 +148,7 @@
     <div>
        
         <div id='map' class='map'>
-                <script src = 'https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js'></script>
+                <script style="height:100vw" src = 'https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js'></script>
                 <script src = "{{ url_for('static', filename = 'js/map.js') }}"></script>
         </div>
     </div>
