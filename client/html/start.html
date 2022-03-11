@@ -34,8 +34,8 @@
                                                 Profile
                                                 </a>
                                                 <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                                                <li><a class="hover-underline-animation dropdown-item" href="login">Log in</a></li>
-                                                <li><a class="hover-underline-animation dropdown-item" href="register">Sign up</a></li>
+                                                <li><a class="hover-underline-animation dropdown-item" href="login" id="login_drop">Log in</a></li>
+                                                <li><a class="hover-underline-animation dropdown-item" href="register" id="reg_drop">Sign up</a></li>
                                                 </ul>
                                         </li>
                                         </ul>
@@ -45,6 +45,27 @@
                 <h1>Hello niggers</h1>
                 <div style="height:1000px;"><h1 style="color:white">Pishki</h1><h2 style="color:red">Sussy Baki</h2></div>
         </div>
-       
+
+        <script>
+                console.log("Here...");
+
+                let uname = window.localStorage.getItem("username");
+                let loginBtn = document.querySelector("#login_drop");
+                let registerBtn = document.querySelector("#reg_drop");
+
+                if(uname) {
+                        console.log("Name defined...");
+
+                        loginBtn.innerHTML = uname;
+
+                        registerBtn.innerHTML = "Sign out";
+                        registerBtn.signOut = true;
+                        registerBtn.setAttribute("href", "");
+                        registerBtn.setAttribute("onclick", `
+                                window.localStorage.clear();
+                                window.location.replace("/");
+                        `);
+                }
+        </script>
 </body>
 </html>

@@ -21,11 +21,11 @@ async function login(form) {
     console.log(message)
 
     if(code == 200){
+        window.localStorage.setItem("username", response["username"])
         window.location.replace("/");
     }else{
         //kod za greshna parola
         alert("User or password is incorrect.");
         window.location.replace("/login");
     }
-    
 }
