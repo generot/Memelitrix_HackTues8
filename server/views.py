@@ -1,9 +1,8 @@
 from flask import Blueprint, render_template, request
-import server.db
+import server.db as db
 import json
 
-views = Blueprint(__name__, "views")
-
+views = Blueprint("views", "views")
 
 @views.route("/")
 def home():
