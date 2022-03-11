@@ -36,38 +36,56 @@
      <div class="device-size background-gradient">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                    <a class="navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
-                    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                    <a class="hover-underline-animation nav-link navbar-font" aria-current="page" href="/">Home</a>
+                <a class="navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
+                <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="hover-underline-animation nav-link navbar-font" aria-current="page" href="/">Home</a>
                             </li>
-                            <li class="nav-item">
-                                    <a class="hover-underline-animation nav-link navbar-font" href="about_us">About us</a>
-                            </li>
-                            <li class="nav-item">
-                                    <a class="hover-underline-animation-current current-page nav-link active navbar-font">Tasks</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Profile
-                                    </a>
-                                    <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                                    <li><a class="hover-underline-animation dropdown-item" href="login">Log in</a></li>
-                                    <li><a class="hover-underline-animation dropdown-item" href="register">Sign up</a></li>
-                                    </ul>
-                            </li>
+                        <li class="nav-item">
+                            <a class="hover-underline-animation nav-link navbar-font" href="about_us">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="hover-underline-animation-current current-page nav-link active navbar-font">Tasks</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profile
+                            </a>
+                        <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
+                            <li><a class="hover-underline-animation dropdown-item" href="login">Log in</a></li>
+                            <li><a class="hover-underline-animation dropdown-item" href="register">Sign up</a></li>
                             </ul>
-                    </div>
-                    
-                    
+                            </li>
+                        </ul>
+                </div>
             </div>
         </nav>
 
+        <script>
+            function createTask(){
+                document.getElementById("task-create").style.display = "inline";
+            }
+
+            function lapai() {
+                document.getElementById("task-create").style.display = "none";
+            }
+        </script>
+
         <h1 style="text-align:center;">Tasks</h1>
+        <button class="task-button" onclick="createTask()">Create a task</button>
+        <div display="none" id="task-create" class="task-create-background">
+            <div class="task-create">
+                <label for="title">Title</label><br>
+                <input type="title" placeholder="Title of the task" name="uname" required="" id="title"><br>
+                <label class="user-pass" for="pswrd">Description</label><br>
+                <textarea id="pass" placeholder="Description" id="pass" style="resize:none;border-radius:5px;width:15vw;height:20vh;"></textarea><br>
+                <button onclick="lapai()" class="konq-vihar">Create</button>
+            </div>
+        </div>
         <div class="adds-big-container" id="bigCont">
 
                 <div class = "adds-small-container">

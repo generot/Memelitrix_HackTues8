@@ -35,7 +35,11 @@ input[type=text], input[type=password] {
 }
 
 .submit:hover{
-  background-color:#7c9971;
+  background-color:#5b6954;
+}
+
+.submit:active{
+  background-color:#b0ad88;
 }
 
 .center-block{
