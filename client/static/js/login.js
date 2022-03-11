@@ -1,6 +1,13 @@
 const route = "/user/login";
 
-async function login(user) {
+async function login(form) {
+    let user = {
+        username: form.querySelector("#usernm").value,
+        password: form.querySelector("#pass").value
+    }
+
+    console.log(user);
+
     if(user.username.length < 4 || user.username.length > 25) {
         //Njakuv pop up mozhe tuka
         return;
@@ -8,7 +15,7 @@ async function login(user) {
 
     console.log("asdf")
 
-    let query = queryStringParams(route, [["username", user.username.innerHTML], ["password", user.password.innerHTML]])
+    let query = queryStringParams(route, [["username", user.username], ["password", user.password]])
 
     let response = await getFromRoute(query);
 
