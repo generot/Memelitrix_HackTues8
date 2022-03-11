@@ -35,7 +35,7 @@ function pishka() {
 
 //initializing map
 
-async function initMap(){
+async function initMap(Markers){
 
     let coords = await pishka()
     var long = coords.longitude
@@ -62,6 +62,12 @@ async function initMap(){
         showAccuracyCircle : false
 
     }));
+
+    for(let index = 0; index < Markers.length; index++){
+        placeMarker(map, Markers[index])
+    }
+
+
 }
 
-initMap()
+initMap(Markers)
