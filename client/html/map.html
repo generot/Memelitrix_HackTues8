@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+        <script src="{{ url_for('static',  filename = '/js/ads.js') }}"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +11,7 @@
     <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',  filename = 'map.css') }}">
 </head>
+
 <body>
     <script src="{{ url_for('static',  filename = 'bootstrap/js/bootstrap.bundle.js') }}"></script>
 
@@ -47,7 +50,32 @@
         <!-- <h1>eta karta</h1> -->
         <p><h1>Eta task</h1></p>
         <h1 class="horosho">Mui zdesь</h1>
-    </div>
+        <div class="adds-big-container" id="bigCont">
+
+                <div class = "adds-small-container">
+                        <title>Ti si pedal</title>
+                        <button class="hidden-button"  onclick="Open_Close_Description(document.getElementById('text1'))">Pomosht za Goshko</button>
+                        <div class="container-text" id="text1" name="deaznam">
+                                <span>a a a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a  </span>
+                        </div>
+                </div>
+
+                <div class = "adds-small-container">
+                        <title>Ti si pedal</title>
+                        <button class="hidden-button"  onclick="Open_Close_Description(document.getElementById('text2'))">Pomosht za Toshko</button>
+                        <div class="container-text" id="text2" name="deaznam">
+                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatum voluptatem cum aut dolore inventore eaque libero quidem assumenda, magni soluta vero facilis ullam, autem consectetur? Eum ipsam amet eligendi. </span>
+                        </div>
+                </div>
+
+                <div class = "adds-small-container" id="cont">
+                        
+                        <button class="hidden-button"  onclick="Open_Close_Description(document.getElementById('text3'))">Pomosht za Borko</button>
+                        <div class="container-text" id="text3" name="deaznam">
+                                <span>a a a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a   a  a a a a a  </span>
+                        </div>
+                </div>
+        </div>
    
 </body>
 </html>

@@ -1,3 +1,69 @@
 .horosho{
     color:pink;
 }
+.hidden-button{
+    background: transparent;
+    border:none;
+    color:white;
+    align-items: left;
+}
+.container-text{
+    overflow:hidden;
+    white-space: nowrap;
+}
+.container-text-break{
+    overflow-wrap:break-word;
+}
+.adds-big-container{
+    margin: auto;
+    width: auto;
+    height:auto;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    border: 1px solid rgb(63, 221, 84);
+    border-width : 5px;
+    box-sizing: border-box;
+    border-radius:10px;
+
+    text-align: left;
+}
+.adds-small-container{
+    margin: auto;
+    width: auto;
+    height:auto;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    border: 1px solid rgb(154, 245, 94);
+    border-width : 5px;
+    box-sizing: border-box;
+    border-radius:10px;
+    margin-bottom:10px;
+    text-align: left;
+}
+.adds-big-container-break{
+    margin: auto;
+    width: auto;
+    height:auto;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    border: 1px solid rgb(63, 221, 84);
+    border-width : 5px;
+    box-sizing: border-box;
+    border-radius:10px;
+    overflow-wrap: break-word;
+    text-align: left;
+}
+.adds-small-container-break{
+    margin: auto;
+    width: auto;
+    height:auto;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    border: 1px solid rgb(154, 245, 94);
+    border-width : 5px;
+    box-sizing: border-box;
+    border-radius:10px;
+    margin-bottom:10px;
+    text-align: left;
+    overflow-wrap: break-word;
+}
