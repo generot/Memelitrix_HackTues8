@@ -4,6 +4,8 @@ function Open_Close_Description(obj,text){
         prevMarker = null;
     }
 
+    obj = obj.querySelector("#text2");
+
     if(obj.classList.contains("container-text")){
         let marker = {
             lon: obj.getAttribute("locationlong"),
@@ -24,7 +26,7 @@ function adCreate(title, desc, location, deletable = false) {
     const template = `
     <div class = "adds-small-container">
         <title id="ad-title">${title}</title>
-        <button class="hidden-button"  onclick="Open_Close_Description(document.getElementById('text2'))" id="title">${title}</button>\n`
+        <button class="hidden-button"  onclick="Open_Close_Description(this.parentElement)" id="title">${title}</button>\n`
         +
         (deletable ? `<button class="hidden-button" style="float:right;vertical-align:text-top;font-size: 20px;top:-100px " onclick="adRemove(this)">X</button>\n`
                   : `\n`)
@@ -34,8 +36,6 @@ function adCreate(title, desc, location, deletable = false) {
         </div>
     </div>
     `
-
-    console.log(template);
 
     let tmp = document.createElement("template");
     let container = document.querySelector("#bigCont");
