@@ -16,7 +16,7 @@
 
 <body>
     <script src="{{ url_for('static',  filename = '/bootstrap/js/bootstrap.bundle.js') }}"></script>
-    <div class="background-gradient" style="height:45vh">
+    <div class="background-gradient" style="height:100vh;width:100vw">
     	<nav class="navbar navbar-expand-lg navbar-light" style="float:right;">
             <div class="container-fluid">
                 <a class="navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
@@ -50,11 +50,11 @@
         	</div>
         </nav>
 
-        <div class="container">
+        <div class="center-block">
             <div class="form_text" id="login_box">
-            <label for="uname"><b>User<b></b></b></label><br>
+            <label class="user-pass" for="uname"><b>User<b></b></b></label><br>
             <input type="text" placeholder="Enter Username" name="uname" required="" id="usernm"><br>
-            <label for="pswrd"><b>Password<b></b></label><br>
+            <label class="user-pass" for="pswrd"><b>Password<b></b></label><br>
             <input id="pass" type="password" placeholder="Password" name="pswrd" required="" id="pass"><br>
             </div>
             	<button class="submit" onclick="login(document.getElementById('login_box'))">Login</button>
