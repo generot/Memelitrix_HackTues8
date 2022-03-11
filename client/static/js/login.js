@@ -21,7 +21,11 @@ async function login(form) {
     console.log(message)
 
     if(code == 200){
-        window.localStorage.setItem("username", response["username"])
+        window.localStorage.setItem("user", {
+            username: response["username"],
+            id: response[id]
+        });
+        
         window.location.replace("/");
     }else{
         //kod za greshna parola
