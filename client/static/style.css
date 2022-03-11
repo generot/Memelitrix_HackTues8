@@ -6,7 +6,7 @@
 
 .navbar-font{
     font-family: 'Montserrat', sans-serif !important;
-    font-weight: bold !important;
+    font-weight: 550 !important;
     color: #fff !important;
     font-size: 0.875em;
     letter-spacing: 0.063em;
@@ -28,8 +28,53 @@
 }
 
 .current-page{
-    color: #7980cd !important;
-    text-decoration: underline;
-    text-decoration-color: #4eaae3;
-    text-decoration-thickness: 0.3em;
+    color: #008e95 !important;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+  
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.2em;
+    bottom: 0.2em;
+    left: 0;
+    background-color: #00a6b5;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.hover-underline-animation-current {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+  
+.hover-underline-animation-current:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.2em;
+    bottom: 0.2em;
+    left: 0;
+    background-color: #91b483;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.hover-underline-animation-current:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
