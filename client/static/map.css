@@ -2,6 +2,10 @@
 .horosho{
     color:pink;
 }
+.bckg{
+    width: 40%;
+    overflow:scroll;
+}
 .hidden-button{
     background: transparent;
     border:none;
@@ -25,7 +29,6 @@
     border-width : 5px;
     box-sizing: border-box;
     border-radius:10px;
-
     text-align: left;
 }
 .adds-small-container{
@@ -41,34 +44,6 @@
     margin-bottom:10px;
     text-align: left;
 }
-.adds-big-container-break{
-    margin: auto;
-    width: auto;
-    height:auto;
-    border: 3px solid #73AD21;
-    padding: 10px;
-    border: 1px solid rgb(63, 221, 84);
-    border-width : 5px;
-    box-sizing: border-box;
-    border-radius:10px;
-    overflow-wrap: break-word;
-    text-align: left;
-}
-.adds-small-container-break{
-    margin: auto;
-    width: auto;
-    height:auto;
-    border: 3px solid #73AD21;
-    padding: 10px;
-    border: 1px solid rgb(154, 245, 94);
-    border-width : 5px;
-    box-sizing: border-box;
-    border-radius:10px;
-    margin-bottom:10px;
-    text-align: left;
-    overflow-wrap: break-word;
-}
-
 .device-size{
     height:100vh;
     width:35vw;
