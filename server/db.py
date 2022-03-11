@@ -6,6 +6,7 @@ uri = "mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/Ability?retr
 client = pymongo.MongoClient(uri)
 db = client["data"]
 users = db["users"]
+ads = db["ads"]
 
 uri_nasko = "mongodb+srv://Nakov:GolemataPatka@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority" 
 
@@ -49,7 +50,7 @@ def add_ad(title, description, username, location):
     '''
     error = ads.insert_one({'title': title, 'description': description, 'username': username, "location": location})
 
-    if(error is None):
+    if(error is not None):
         return {"code": 400, "message": "Internal server error"}
 
     return {"code": 200, "message": "Ad added successfully"}
