@@ -44,20 +44,22 @@ def check_user(username, password):
     
     return {"code": 400, "message": "Username or password is incorrect"}
 
-def add_ad(title, description, id, location):
-    error = ads.insert_one({'title': title, 'description': description, 'id': id, "location": location})
-
-    if(error is not None):
-        return {"code": 400, "message": "Internal server error"}
+def add_task(title, description, id, location):
+    #insert ad
+    ads.insert_one({'title': title, 'description': description, 'id': id, "location": location})
 
     return {"code": 200, "message": "Ad added successfully"}
 
-def get_ads():
+def get_tasks():
+    #get ads
     ads_list = []
     for i in ads.find({}):
+        i["_id"] = None
         ads_list.append(i)
 
     if ads_list == []:
         return {"code": 400, "message": "No ads"}
 
     return {"code": 200, "message": "Ads retrieved successfully", "ads": ads_list}
+
+print(add_task("Habibi", "Habibi", "1", "Sofia"))

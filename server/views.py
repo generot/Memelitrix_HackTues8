@@ -47,23 +47,18 @@ def login():
 
     return a
 
-@views.route("/profile/<id>")
-def jobs_page():
-    tasks = get_tasks()
-    return render_template("profile.html", tasks = [1, 2, 3, 4, 5], jobs = [1, 2, 3])
-
-@views.route("/ads/add", methods=["POST"])
+@views.route("/tasks/add", methods=["POST"])
 def accept_task():
     req = request.get_data()
     data = json.loads(req)
 
     title = data["title"]
     description = data["description"]
-    username = data["username"]
+    id = data["id"]
     location = data["location"]
 
-    return add_ad(title, description, username, location)
+    return db.add_task(title, description, id, location)
 
-@views.route("/ads")
-def asdf():
-    pass
+@views.route("/tasks/get", methods=["GET"])
+def return_tasks():
+    return db.get_tasks()
