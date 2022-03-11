@@ -1,9 +1,11 @@
 import pymongo
 import hashlib
 
+uri = "mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
 def add_user(username, password):
     #connection
-    client = pymongo.MongoClient("mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    client = pymongo.MongoClient(uri)
     db = client["data"]
     users = db["users"]
 
@@ -26,7 +28,7 @@ def add_user(username, password):
 
 def check_user(username, password):
     #connection
-    client = pymongo.MongoClient("mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    client = pymongo.MongoClient(uri)
     db = client["data"]
     users = db["users"]
 
