@@ -1,8 +1,5 @@
 import pymongo
 import hashlib
-import certifi
-import os
-
 uri = "mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority"
 uri_nasko = "mongodb+srv://Nakov:GolemataPatka@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority" 
 
@@ -44,7 +41,7 @@ def check_user(username, password):
             password_hash = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
 
             if i["password"] == password_hash:
-                return {"code": 200, "message": "User logged in successfully"}
+                return {"code": 200, "message": "User logged in successfully", "username": i["name"]}
             else:
                 return {"code": 400, "message": "Wrong password"}
     

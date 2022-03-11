@@ -14,14 +14,14 @@ async function login(form) {
     let query = queryStringParams(route, [["username", user.username], ["password", user.password]]);
 
     let response = await getFromRoute(query);
-    response = await response.json();
 
     let code = response["code"];
     let message = response["message"];
 
     if(code == 200){
+        window.localStorage.setItem("username", response["username"])
         window.location.replace("/");
-    }else{
+    } else {
         if(message == "Wrong password"){
             //kod za greshna parola
             window.location.replace("/login");
@@ -30,5 +30,4 @@ async function login(form) {
             window.location.replace("/login");
         }
     }
-    
 }
