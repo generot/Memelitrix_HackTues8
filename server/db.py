@@ -1,7 +1,7 @@
 import pymongo
 import hashlib
 
-uri = "mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+uri = "mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority"
 
 def add_user(username, password):
     #connection

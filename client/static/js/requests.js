@@ -3,6 +3,7 @@
  * @param {String} route 
  */
 function sendToRoute(jsonData, route) {
+    console.log(jsonData);
     const resp = fetch(route, {
         method: "POST",
         mode: "no-cors",

@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="{{ url_for('static',  filename = '/bootstrap/css/bootstrap.css') }}" />
         <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}" />
         <script src="{{ url_for('static',  filename = 'js/register.js') }}"></script>
+        <script src="{{ url_for('static',  filename = 'js/requests.js') }}"></script>
 </head>
 
 <body>
@@ -51,19 +52,17 @@
                                 </div>
                         </div>
                 </nav>
-                <form onsubmit="return login(this)">
                         <div class="container">
-                                <div class = "form_text">
+                                <div class = "form_text" id="form_register">
                                         <label for="uname"><b>User<b></b></b></label><br>
-                                        <input type="text" placeholder="Enter Username" name="uname" required=""><br>
+                                        <input type="text" placeholder="Enter Username" name="uname" required="" id="usernm"><br>
                                         <label for="pswrd"><b>Password<b></b></label><br>
-                                        <input id = "pass"type="password" placeholder="Password" name="pswrd" required=""><br>	
+                                        <input id = "pass"type="password" placeholder="Password" name="pswrd" required="" id="pass"><br>
                                 
                                 </div>
-                                        <button  class = "submit">Register</button>
+                                        <button  class = "submit" onclick="register(document.getElementById('form_register'))">Register</button>
         
                         </div>
-                </form>
         </div>
         
 </body>
