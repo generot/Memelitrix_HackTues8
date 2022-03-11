@@ -71,7 +71,7 @@
         </nav>
 
         <script>
-            function createTask(){
+            function openTask(){
                 document.getElementById("task-create").style.display = "inline";
             }
 
@@ -81,7 +81,7 @@
                 document.getElementById("task-desc").value = "";
             }
 
-            function lapai(){
+            function createTask(){
                 let title = document.querySelector("#task-title");
                 let desc = document.querySelector("#task-desc");
 
@@ -93,14 +93,14 @@
         </script>
 
         <h1 style="text-align:center;">Tasks</h1>
-        <button class="task-button task-button-underline" style="align-self: center;font-size:1.3em;" onclick="createTask()">Create a task</button>
+        <button class="task-button task-button-underline" style="align-self: center;font-size:1.3em;" onclick="openTask()">Create a task</button>
         <div display="none" id="task-create" class="task-create-background">
             <div class="task-create"><br>
                 <label for="title-desc">Title</label><br>
                 <input content="" type="title" placeholder="Title of the task" id="task-title" style="border-radius:10px;width:26vw;"><br>
                 <label class="title-desc" for="pswrd">Description</label><br>
                 <textarea content="" id="task-desc" placeholder="Description" style="resize:none;border-radius:15px;width:26vw;height:25vh;"></textarea><br>
-                <button onclick="lapai()" class="konq-vihar konq-vihar-underline" style="margin-right:3vw;">Create</button>
+                <button onclick="createTask()" class="konq-vihar konq-vihar-underline" style="margin-right:3vw;">Create</button>
                 <button onclick="closeTask()" class="konq-vihar konq-vihar-underline" style="margin-left:3vw;">Cancel</button>
             </div>
         </div>
