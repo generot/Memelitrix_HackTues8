@@ -26,3 +26,16 @@ async function getFromRoute(route) {
 
     return resp.json();
 } 
+
+function queryStringParams(url, args) {
+    let query = url + "?";
+    for(let i = 0; i < args.length; i++) {
+        let param = args[i];
+        query += param[0] + "=" + param[1];
+
+        if(i < args.length - 1)
+            query += "&";
+    }
+
+    return query;
+}
