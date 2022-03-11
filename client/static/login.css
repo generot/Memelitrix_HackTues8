@@ -86,8 +86,12 @@ input[type=text], input[type=password] {
 }
 
 .center-block{
+<<<<<<< HEAD
+  margin-left:0vw;
+=======
   display:inline-block;
   margin-left:13vw;
+>>>>>>> 4dc96faed02be6af7cc74211bdb628ccde500204
   margin-top:30vh;
   width:30vw;
   height: 45vh; 

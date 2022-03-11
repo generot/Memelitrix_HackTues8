@@ -41,7 +41,11 @@
     margin-bottom:10px;
     text-align: left;
 }
-
+.close {
+    cursor: pointer;
+    position: absolute;
+    transform: translate(0%, -50%);
+  }
 .map{
     width: 65vw;
     height: 100vh;

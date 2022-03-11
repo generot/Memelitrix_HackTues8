@@ -11,9 +11,9 @@
 
 <body>
     <script src="{{ url_for('static',  filename = '/bootstrap/js/bootstrap.bundle.js') }}"></script>
-    <div class="background-gradient" style="height:45vh">
+    <div class="background-gradient" style="height:100vh;width:100vw">
     	<nav class="navbar navbar-expand-lg navbar-light" style="float:left;">
-        	<div class="container-fluid">
+            <div class="container-fluid">
                 <a class="navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
                 <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -21,31 +21,32 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link navbar-font" aria-current="page" href="/">Home</a>
-                        </li>
-						<li class="nav-item">
-                        	<a class="nav-link navbar-font" href="about_us">About us</a>
+                            <a class="hover-underline-animation nav-link navbar-font" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link navbar-font" href="map">Tasks</a>
+                            <a class="hover-underline-animation nav-link navbar-font" href="about_us">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="hover-underline-animation nav-link navbar-font" href="map">Tasks</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="current-page active nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Profile
                             </a>
-                        	<ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                                <li><a class="hover-underline-animation dropdown-item" href="login" id="login_drop">Log in</a>
+                            <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
+                            	<li><a class="hover-underline-animation-current current-page dropdown-item" id="login_drop">Log in</a>
                                 </li>
-                                <li><a class="hover-underline-animation-current current-page dropdown-item" id="register_drop">Sign up</a>
+                                <li><a class="hover-underline-animation dropdown-item" href="register" id="register_drop">Sign up</a>
                                 </li>
-                        	</ul>
+                            </ul>
                         </li>
                     </ul>
                 </div>
         	</div>
         </nav>
-        <div class="container">
-            <div class = "form_text" id="form_register">
+
+        <div class="center-block">
+            <div class = "form_text" id="form_register" style="justify-content:center;" >
                 <label for="uname"><b>User<b></b></b></label><br>
                 <input type="text" placeholder="Enter Username" name="uname" required="" id="usernm"><br>
                 <label for="pswrd"><b>Password<b></b></label><br>
