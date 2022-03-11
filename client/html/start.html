@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <title>AbilitY</title>
          
-        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{{ url_for('static',  filename = '/bootstrap/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}">
 </head>
 <body>
         <div class="background-gradient" style="height:500px">
@@ -23,18 +23,18 @@
                                                 <a class="current-page nav-link active navbar-font" aria-current="page" >Home</a>
                                         </li>
                                         <li class="nav-item">
-                                                <a class="nav-link navbar-font" href="about_us.html">About us</a>
+                                                <a class="nav-link navbar-font" href="about_us">About us</a>
                                         </li>
                                         <li class="nav-item">
-                                                <a class="nav-link navbar-font" href="map.html">Tasks</a>
+                                                <a class="nav-link navbar-font" href="map">Tasks</a>
                                         </li>
                                         <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Profile
                                                 </a>
                                                 <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="login.html">Log in</a></li>
-                                                <li><a class="dropdown-item" href="register.html">Sign up</a></li>
+                                                <li><a class="dropdown-item" href="login">Log in</a></li>
+                                                <li><a class="dropdown-item" href="register">Sign up</a></li>
                                                 </ul>
                                         </li>
                                         </ul>
@@ -42,7 +42,7 @@
                         </div>
                 </nav>
                 <h1>Hello niggers</h1>
-                <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+                <script src="{{ url_for('static',  filename = '/bootstrap/js/bootstrap.bundle.js') }}"></script>
                 <divstyle="height:1000px;"><h1 style="color:white">Pishki</h1><h2 style="color:red">Sussy Baki</h2></div>
         </div>
        
