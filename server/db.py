@@ -1,10 +1,17 @@
 import pymongo
 import hashlib
+import certifi
+import os
 
 uri = "mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority"
+
 client = pymongo.MongoClient(uri)
 db = client["data"]
 users = db["users"]
+
+uri_nasko = "mongodb+srv://Nakov:GolemataPatka@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority" 
+
+#uri = uri_nasko
 
 def add_user(username, password):
     #check if user exists
