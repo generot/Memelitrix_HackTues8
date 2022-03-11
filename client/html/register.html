@@ -34,9 +34,9 @@
                                 Profile
                             </a>
                             <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                            	<li><a class="hover-underline-animation-current current-page dropdown-item" id="login_drop">Log in</a>
+                            	<li><a class="hover-underline-animation dropdown-item" id="login_drop" href="login">Log in</a>
                                 </li>
-                                <li><a class="hover-underline-animation dropdown-item" href="register" id="register_drop">Sign up</a>
+                                <li><a class="hover-underline-animation-current current-page dropdown-item" id="register_drop">Sign up</a>
                                 </li>
                             </ul>
                         </li>
@@ -47,9 +47,10 @@
 
         <div class="center-block">
             <div class = "form_text" id="form_register" style="justify-content:center;" >
-                <label for="uname"><b>User<b></b></b></label><br>
+                <label class="user-pass" style="margin-top: 0; font-size: 2em; text-decoration:underline; font-weight: bold;">Sign Up</label><br>
+                <label class="user-pass" for="uname">User</label><br>
                 <input type="text" placeholder="Enter Username" name="uname" required="" id="usernm"><br>
-                <label for="pswrd"><b>Password<b></b></label><br>
+                <label class="user-pass" for="pswrd">Password</label><br>
                 <input id = "pass"type="password" placeholder="Password" name="pswrd" required="" id="pass"><br>  
             </div>
                 <button  class = "submit" onclick="register(document.getElementById('form_register'))">Register</button>
