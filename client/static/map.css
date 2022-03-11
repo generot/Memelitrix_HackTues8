@@ -1,0 +1,24 @@
+.device-size{
+    height:100vh;
+    width:35vw;
+    float:left;
+}
+
+.map{
+    display:inline-block;
+    margin-left:20vw;
+    margin-top:20vh
+}
+
+@media (max-width: 768px) {
+    .device-size{
+        height:auto;
+        width:100vw;
+    }
+
+    .map{
+        display:inline-block;
+        margin-left:0px;
+        margin-top:0px;
+    }
+}

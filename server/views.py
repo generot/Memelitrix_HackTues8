@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request
 import db
+import json
 
 views = Blueprint(__name__, "views")
 
@@ -27,7 +28,9 @@ def register_page():
 
 @views.route("/user/register", methods=["POST"])
 def register():
-    data = request.json
+    req = request.get_data()
+    data = json.loads(req)
+
     username = data["username"]
     password = data["password"]
 

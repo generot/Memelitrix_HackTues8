@@ -6,65 +6,54 @@
         <link rel="stylesheet" href="{{ url_for('static',  filename = '/bootstrap/css/bootstrap.css') }}" />
         <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}" />
         <script src="{{ url_for('static',  filename = 'js/register.js') }}"></script>
+        <script src="{{ url_for('static',  filename = 'js/requests.js') }}"></script>
 </head>
 
 <body>
-        <script src="{{ url_for('static',  filename = '/bootstrap/js/bootstrap.bundle.js') }}"></script>
-        <div class="background-gradient" style="height: 500px">
-                <nav class="navbar navbar-expand-lg navbar-light" style="float: right">
-                        <div class="container-fluid">
-                                <a class="navbar-brand navbar-font"
-                                        href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
-                                <button class="navbar-toggler ml-auto custom-toggler" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                                        aria-controls="navbarSupportedContent" aria-expanded="false"
-                                        aria-label="Toggle navigation">
-                                        <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                                <li class="nav-item">
-                                                        <a class="nav-link navbar-font" aria-current="page"
-                                                                href="/">Home</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                        <a class="nav-link navbar-font" href="about_us">About us</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                        <a class="nav-link navbar-font" href="map">Tasks</a>
-                                                </li>
-                                                <li class="nav-item dropdown">
-                                                        <a class="current-page active nav-link dropdown-toggle navbar-font"
-                                                                href="#" id="navbarDropdown" role="button"
-                                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                                Profile
-                                                        </a>
-                                                        <ul class="dropdown-menu navbar-font"
-                                                                aria-labelledby="navbarDropdown">
-                                                                <li><a class="dropdown-item" href="login">Log in</a>
-                                                                </li>
-                                                                <li><a class="current-page dropdown-item">Sign up</a>
-                                                                </li>
-                                                        </ul>
-                                                </li>
-                                        </ul>
-                                </div>
-                        </div>
-                </nav>
-                <form onsubmit="return login(this)">
-                        <div class="container">
-                                <div class = "form_text">
-                                        <label for="username"><b>User<b></b></b></label><br>
-                                        <input type="text" placeholder="Enter Username" name="username" required=""><br>
-                                        <label for="pasword"><b>Password<b></b></label><br>
-                                        <input id = "pass"type="password" placeholder="Password" name="password" required=""><br>	
-                                
-                                </div>
-                                        <button  class = "submit">Register</button>
-        
-                        </div>
-                </form>
-        </div>
+    <script src="{{ url_for('static',  filename = '/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <div class="background-gradient" style="height:45vh">
+    	<nav class="navbar navbar-expand-lg navbar-light" style="float: right">
+        	<div class="container-fluid">
+                <a class="navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
+                <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link navbar-font" aria-current="page" href="/">Home</a>
+                        </li>
+						<li class="nav-item">
+                        	<a class="nav-link navbar-font" href="about_us">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbar-font" href="map">Tasks</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="current-page active nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Profile
+                            </a>
+                        	<ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
+                                <li><a class="hover-underline-animation dropdown-item" href="login">Log in</a>
+                                </li>
+                                <li><a class="hover-underline-animation-current current-page dropdown-item">Sign up</a>
+                                </li>
+                        	</ul>
+                        </li>
+                    </ul>
+                </div>
+        	</div>
+        </nav>
+        <div class="container">
+            <div class = "form_text" id="form_register">
+                <label for="uname"><b>User<b></b></b></label><br>
+                <input type="text" placeholder="Enter Username" name="uname" required="" id="usernm"><br>
+                <label for="pswrd"><b>Password<b></b></label><br>
+                <input id = "pass"type="password" placeholder="Password" name="pswrd" required="" id="pass"><br>  
+            </div>
+                <button  class = "submit" onclick="register(document.getElementById('form_register'))">Register</button>
+            </div>
+    </div>
         
 </body>
 
