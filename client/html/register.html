@@ -1,24 +1,65 @@
 <!DOCTYPE html>   
 <html>  
-<link rel="stylesheet" href="../static/login.css">
-<script src="../static/register.js"></script>
-<head></head>
-<body>  
 
-	<form onsubmit ="return myFunction(this)" action="login.html" method="post">
-		<div class="container">
-			<div class = "form_text">
-				<label for="uname"><b>User<b></b></b></label><br>
-				<input type="text" placeholder="Enter Username" name="uname" required=""><br>
-				<label for="pswrd"><b>Password<b></b></label><br>
-				<input id = "pass"type="password" placeholder="Password" name="pswrd" required=""><br>	
-				<input id = "repass" type = "password" placeholder="rePassword" name = "repswrd" required="">
-			
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbilitY</title>
+
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+    <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+    <div class="background-gradient" style="height:500px">
+        <nav class="navbar navbar-expand-lg navbar-light" style="float:right;">
+            <div class="container-fluid">
+                    <a class="navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
+                    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                    <a class="nav-link navbar-font" aria-current="page" href="start.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class="nav-link navbar-font" href="about_us.html">About us</a>
+                            </li>
+                            <li class="nav-item">
+                                    <a class=" nav-link navbar-font"  href="map.html">Tasks</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                    <a class="current-page active nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Profile
+                                    </a>
+                                    <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="login.html">Log in</a></li>
+                                    <li><a class="current-page dropdown-item">Sign up</a></li>
+                                    </ul>
+                            </li>
+                            </ul>
+                    </div>
+            </div>
+    </nav>
+
+		<script src="../static/register.js"></script>
+		<form onsubmit ="return myFunction(this)" action="login.html" method="post">
+			<div class="container">
+				<div class = "form_text">
+					<label for="uname"><b>User<b></b></b></label><br>
+					<input type="text" placeholder="Enter Username" name="uname" required=""><br>
+					<label for="pswrd"><b>Password<b></b></label><br>
+					<input id = "pass"type="password" placeholder="Password" name="pswrd" required=""><br>	
+					<input id = "repass" type = "password" placeholder="rePassword" name = "repswrd" required="">
+				
+				</div>
+					<button  class = "submit" type="submit">Register</button>
+
 			</div>
-				<button  class = "submit" type="submit">Register</button>
-
-		</div>
-	</form>
-
+		</form>
+	</div>
 </body>
 </html>
