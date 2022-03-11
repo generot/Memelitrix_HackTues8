@@ -3,8 +3,15 @@
     <head>
         <!--script src="{{ url_for('static', filename='js/requests.js') }}"></script>-->
         <script src="../static/js/requests.js"></script>
+        <div id="cont1">
+            <textarea id="smth"></textarea>
+        </div>
     </head>
     <body>
         <p>WELKOME</p>
+        <script>
+            var d = document.getElementById("cont1");
+            console.log(d.querySelector("#smth").value);
+        </script>
     </body>
 </html>
