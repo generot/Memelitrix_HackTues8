@@ -61,11 +61,12 @@ async function initMap(Markers){
 
     }));
 
-    for(let index = 0; index < Markers.length; index++){
-        placeMarker(map, Markers[index])
-    }
+    if(Markers)
+        for(let index = 0; index < Markers.length; index++){
+            placeMarker(map, Markers[index])
+        }
 
 
 }
 
-initMap(Markers)
+initMap(null);
