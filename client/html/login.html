@@ -1,10 +1,13 @@
 <!DOCTYPE html>   
 <html>  
-<link rel="stylesheet" href="../static/login.css">
-<head></head>
+<link rel="stylesheet" href="{{ url_for('static', 'login.css') }}">
+<head>
+	<script src="{{ url_for('static', 'js/requests.js') }}"></script>
+	<script src="{{ url_for('static', 'js/login.js') }}"></script>
+</head>
 <body>  
 
-	<form action="login.html" method="get">
+	<form onsubmit="login(this)">
 		<div class="container">
 			<div class = "form_text">
 				<label for="uname"><b>User<b></b></b></label><br>
