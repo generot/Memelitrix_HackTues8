@@ -1,6 +1,4 @@
-var map
 //get user location
-
 var options = {     
     enableHighAccuracy: true,
     timeout: 5000,
