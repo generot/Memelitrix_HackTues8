@@ -10,25 +10,52 @@
 }
 
 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  width: 20vw;
+  height: 4.5vh;
+  margin: 2vh 2vw;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  border-radius:15px;
+  text-align: center;
 }
 .form_text{
-    text-align: center;
+  text-align: center;
 }
 .submit{
-    background-color:red;
-
+    background-color:#404a3b;
+    color:white;
+    border:none;
+    border-radius:5px;
+    text-align:center;
+    vertical-align: middle;
+    margin-top:6vh;
+    width: 7.5vw;
+    height: 3vh;
 }
+
 .submit:hover{
-  background-color:green;
+  background-color:#7c9971;
 }
 
-.center-square{
+.center-block{
+  display:inline-block;
+  margin-left:35vw;
+  margin-top:30vh;
+  width:30vw;
+  height: 40vh; 
+  background-color:#a7f58c;
+  color:gray;
+  text-align:center;
+  border-radius:25px;
+  padding-top:5vh;
+  border-style: solid;
+  border-color: #7c9971;
+  border-width: 0.35em;
+}
 
-  
+.user-pass{
+  font-weight: 550;
+  font-size: 1.05em;
+  letter-spacing: 0.06em;
 }
