@@ -63,5 +63,3 @@ def get_ads():
         return {"code": 400, "message": "No ads"}
 
     return {"code": 200, "message": "Ads retrieved successfully", "ads": ads_list}
-
-print("pishka")
