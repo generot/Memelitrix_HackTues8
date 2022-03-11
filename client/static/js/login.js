@@ -6,8 +6,9 @@ async function login(form) {
         password: form.querySelector("#pass").value
     }
 
-    if(user.username.length < 4 || user.username.length > 25) {
+    if(user.username.length <= 4 || user.username.length >= 25) {
         //Njakuv pop up mozhe tuka
+        alert("Username must be between 4 and 25 characters.");
         return;
     }
 
