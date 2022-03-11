@@ -43,9 +43,14 @@ def login():
     password = data["password"]
 
     a = db.check_user(username, password)
-    print(a)
-
     return a
+
+@views.route("/user/verify", methods=["GET"])
+def verify_user():
+    data = request.args.to_dict()
+    username = data["username"]
+
+    return db.verify_user_db(username)
 
 @views.route("/tasks/add", methods=["POST"])
 def accept_task():

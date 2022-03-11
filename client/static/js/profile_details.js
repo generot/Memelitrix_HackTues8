@@ -1,19 +1,27 @@
 function editAfterLogin() {
+    const route = "/user/verify"
+
     let user = JSON.parse(window.localStorage.getItem("user"));
-    let loginBtn = document.querySelector("#login_drop");
-    let registerBtn = document.querySelector("#register_drop");
+    if(!user) return;
 
-    if(user) {
-        console.log("Name defined...");
+    getFromRoute(queryStringParams(route, [["username", user.username]]))
+    .then(res => {
+        if(!res.exists)
+            return;
 
-        loginBtn.innerHTML = user.username;
-
-        registerBtn.innerHTML = "Sign out";
-        registerBtn.signOut = true;
-        registerBtn.setAttribute("href", "");
-        registerBtn.setAttribute("onclick", `
-            window.localStorage.clear();
-            window.location.replace("/");
-        `);
-    }
+        let loginBtn = document.querySelector("#login_drop");
+        let registerBtn = document.querySelector("#register_drop");
+        
+        if(user) {
+            loginBtn.innerHTML = user.username;
+        
+            registerBtn.innerHTML = "Sign out";
+            registerBtn.signOut = true;
+            registerBtn.setAttribute("href", "");
+            registerBtn.setAttribute("onclick", `
+                window.localStorage.clear();
+                window.location.replace("/");
+            `);
+        }
+    });   
 }

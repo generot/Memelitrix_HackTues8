@@ -44,6 +44,15 @@ def check_user(username, password):
     
     return {"code": 400, "message": "Username or password is incorrect"}
 
+def verify_user_db(username):
+    schema = {"name": username}
+    user = users.find_one(schema)
+
+    if user:
+        return {"code": 200, "message": "STATUS OK", "exists": True}
+
+    return {"code": 200, "message": "STATUS OK", "exists": False}
+
 def add_task(title, description, id, location):
     #insert ad
     ads.insert_one({'title': title, 'description': description, 'id': id, "location": location})
