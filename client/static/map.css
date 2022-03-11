@@ -28,7 +28,7 @@
     border-radius:10px;
     text-align: left;
 }
-.adds-small-container{
+.adds-small-container {
     margin: auto;
     width: auto;
     height:auto;
@@ -41,6 +41,12 @@
     margin-bottom:10px;
     text-align: left;
 }
+
+.adds-small-container:hover {
+    background-color: darkgreen;
+    opacity: 0.3;
+}
+
 .close {
     cursor: pointer;
     position: absolute;

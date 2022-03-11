@@ -61,3 +61,9 @@ def get_tasks():
         return {"code": 400, "message": "No ads"}
 
     return {"code": 200, "message": "Ads retrieved successfully", "ads": ads_list}
+
+def remove_task_db(title, uid):
+    schema = {"title": title, "id": uid}
+    ads.delete_many(schema)
+
+    return {"code": 200, "message": "STATUS OK"}

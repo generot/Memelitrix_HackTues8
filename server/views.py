@@ -62,3 +62,10 @@ def accept_task():
 @views.route("/tasks/get", methods=["GET"])
 def return_tasks():
     return db.get_tasks()
+
+@views.route("/tasks/remove", methods=["POST"])
+def remove_task():
+    req = request.get_data()
+    data = json.loads(req)
+
+    return db.remove_task_db(data["title"], data["uid"])
