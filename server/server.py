@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from views import views
+from server.views import views
 
 temp_dir = os.path.abspath("../client/html")
 stat_dir = os.path.abspath("../client/static")

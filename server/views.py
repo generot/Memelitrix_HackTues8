@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-import db
+import server.db
 import json
 
 views = Blueprint(__name__, "views")
