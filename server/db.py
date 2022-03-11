@@ -61,5 +61,3 @@ def get_tasks():
         return {"code": 400, "message": "No ads"}
 
     return {"code": 200, "message": "Ads retrieved successfully", "ads": ads_list}
-
-#print(add_task("Habibi", "Habibi", "1", "Sofia"))
