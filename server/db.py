@@ -44,22 +44,15 @@ def check_user(username, password):
     
     return {"code": 400, "message": "Username or password is incorrect"}
 
-def add_ad(title, description, username, location):
-    pass
-    #insert ad
-    '''
-    error = ads.insert_one({'title': title, 'description': description, 'username': username, "location": location})
+def add_ad(title, description, id, location):
+    error = ads.insert_one({'title': title, 'description': description, 'id': id, "location": location})
 
     if(error is not None):
         return {"code": 400, "message": "Internal server error"}
 
     return {"code": 200, "message": "Ad added successfully"}
-    '''
 
 def get_ads():
-    pass
-    #get ads
-    '''
     ads_list = []
     for i in ads.find({}):
         ads_list.append(i)
@@ -68,4 +61,3 @@ def get_ads():
         return {"code": 400, "message": "No ads"}
 
     return {"code": 200, "message": "Ads retrieved successfully", "ads": ads_list}
-    '''
