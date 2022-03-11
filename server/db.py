@@ -1,14 +1,19 @@
 import pymongo
 import hashlib
+import certifi
+import os
 
 uri = "mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority"
 
-def add_user(username, password):
-    #connection
-    client = pymongo.MongoClient(uri)
-    db = client["data"]
-    users = db["users"]
+client = pymongo.MongoClient(uri)
+db = client["data"]
+users = db["users"]
 
+uri_nasko = "mongodb+srv://Nakov:GolemataPatka@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority" 
+
+#uri = uri_nasko
+
+def add_user(username, password):
     #check if user exists
     for i in users.find({}):
         if i["name"] == username:
@@ -27,11 +32,6 @@ def add_user(username, password):
     return {"code": 200, "message": "User registered successfully"}
 
 def check_user(username, password):
-    #connection
-    client = pymongo.MongoClient(uri)
-    db = client["data"]
-    users = db["users"]
-
     for i in users.find({}):
         if i["name"] == username:
             password = password.encode()
@@ -41,16 +41,11 @@ def check_user(username, password):
             if i["password"] == password_hash:
                 return {"code": 200, "message": "User logged in successfully"}
             else:
-                return {"code": 400, "message": "Wrong password"}
+                return {"code": 400, "message": "Username or password is incorrect"}
     
-    return {"code": 400, "message": "User does not exist"}
+    return {"code": 400, "message": "Username or password is incorrect"}
 
 def add_ad(title, description, username, location):
-    #connection
-    client = pymongo.MongoClient(uri)
-    db = client["data"]
-    ads = db["ads"]
-
     #insert ad
     error = ads.insert_one({'title': title, 'description': description, 'username': username, "location": location})
 
@@ -60,11 +55,6 @@ def add_ad(title, description, username, location):
     return {"code": 200, "message": "Ad added successfully"}
 
 def get_ads():
-    #connection
-    client = pymongo.MongoClient(uri)
-    db = client["data"]
-    ads = db["ads"]
-
     #get ads
     ads_list = []
     for i in ads.find({}):
@@ -74,3 +64,5 @@ def get_ads():
         return {"code": 400, "message": "No ads"}
 
     return {"code": 200, "message": "Ads retrieved successfully", "ads": ads_list}
+
+print("pishka")
