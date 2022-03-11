@@ -3,6 +3,7 @@ import db
 
 views = Blueprint(__name__, "views")
 
+
 @views.route("/")
 def home():
     return render_template("start.html")
@@ -10,6 +11,10 @@ def home():
 @views.route("/login")
 def login_page():
     return render_template("login.html")
+
+@views.route("/register")
+def register_page():
+    return render_template("register.html")
 
 
 @views.route("/user/register", methods=["POST"])
