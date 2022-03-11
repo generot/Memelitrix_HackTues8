@@ -47,6 +47,10 @@ def login():
 
     return a
 
+@views.route("<username>/tasks")
+def jobs_page(username):
+    return render_template("jobs.html")
+
 @views.route("/ads/add")
 def add_ad():
     pass
