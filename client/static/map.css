@@ -9,11 +9,31 @@
     font-weight: bold;
 }
 
+.ad-title{
+    color:black !important;
+}
+
 .hidden-button-taken{
     text-align:center;  
     background: transparent;
     border:none;
-    color: black;
+    color: black    ;
+    display: inline-block;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.check-button{
+    display:none !important;
+}
+
+.check-button-taken{
+    display:inline-block;
+    text-align:center;  
+    background: transparent;
+    border:none;
+    color: green !important;
     display: inline-block;
     align-items: center;
     font-size: 1.2em;
