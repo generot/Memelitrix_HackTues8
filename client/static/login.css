@@ -76,3 +76,28 @@ input[type=text], input[type=password] {
   letter-spacing: 0.06em;
   margin-top: 2vh;
 }
+
+@media (max-width: 768px){
+  .center-block{
+    display:grid;
+    margin-top: 0vh;
+    top: 15vh;
+    margin-left:15vw;
+    width: 70vw;
+    height: 60vh;
+    position:relative;
+    padding-top: 2vh;
+  }
+
+  input[type=text], input[type=password] {
+    display:inline-block;
+    width: 50vw;
+    height: 5vh;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius:10px;
+    text-align: center;
+  }
+
+}
