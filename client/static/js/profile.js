@@ -92,9 +92,14 @@ async function adFetch() {
         return distance1 - distance2;
     });
 
+    let taskCoords = [];
+
     for(let i of ads) {
         if(i.taken_by == user.id) {
             adCreate(i, true, user.id);
+            taskCoords.push(i.location);
         }
     }
+
+    return taskCoords;
 }

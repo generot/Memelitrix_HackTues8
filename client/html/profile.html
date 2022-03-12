@@ -4,11 +4,13 @@
     var map;
     var prevMarker;
     var taskOnFocus;
+    var allTaskPos;
 </script>
 
 <script src="{{ url_for('static',  filename = '/js/requests.js') }}"></script>
 <script src="{{ url_for('static',  filename = '/js/profile.js') }}"></script>
 <script src="{{ url_for('static',  filename = '/js/taskDOM.js') }}"></script>
+<script src="{{ url_for('static',  filename = '/js/routing.js') }}"></script>
 
 <head>
     <!-- map render -->
@@ -76,6 +78,7 @@
             <div class="profile-container">
                 <h1 id="profile-username" style="text-align: center; margin-top: 3em;"></h1>
                 <h2 id="profile-points" style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></h2>
+                <button class="task-button task-button-underline" style="font-size:1.3em;align-self: center;"onclick="" id="task-route-btn">Show overall shortest path</button>
             </div>
 
             <div class="adds-big-container" id="bigCont"></div>
@@ -106,7 +109,6 @@
                 src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js'></script>
             <script src="{{ url_for('static', filename = 'js/marker.js') }}"></script>
             <script src="{{ url_for('static', filename = 'js/map.js') }}"></script>
-            <script src="{{ url_for('static', filename = 'js/routing.js') }}"></script>
 
         </div>
 
@@ -114,7 +116,29 @@
         <script>editAfterLogin();</script>
 
         <script>
-            adFetch();
+            (async function() {
+                allTaskPos = await adFetch();
+                
+                let crd = await getCoords();
+                let crdArr = [crd.longitude, crd.latitude];
+
+                allTaskPos = [crdArr, ...allTaskPos];
+                allTaskPos = allTaskPos.map(x => {
+                    let newMrk = new tt.Marker({
+                        draggable: false
+                    });
+
+                    console.log(x);
+                    newMrk.setLngLat(x);
+
+                    return newMrk;
+                });
+
+                console.log(allTaskPos);
+
+                let btn = document.querySelector("#task-route-btn");
+                btn.setAttribute("onclick", "makeTaskRoute(map, allTaskPos)")
+            })();
         </script>
     </body>
 
