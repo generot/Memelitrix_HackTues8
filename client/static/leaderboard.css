@@ -7,23 +7,29 @@
 	width: 50vw;
 	height: 100vh;
 	align-self: center;
-	top: 50%;
-	left: 50%;
+	vertical-align:middle;
+	margin-top: auto;
+	margin-left: auto;
 	z-index: 1;
     border-radius: 50%;
 }
 .leaderboard {
-	background: grey
+	background: transparent;
 }
 .leaderboard ol {
     counter-reset: number;
-
 }
 .leaderboard li {
-	padding: 16px;
+	padding: 1em;
 	display: flex;
     border: 1px solid rgb(0,250,154)
 }
+
+.leaderboard-body{
+	width: 50.5vw !important;
+	margin-left: -1.65vw;
+}
+
 .leaderboard li mark {
 	flex-grow: 1;
 	color: snow;
@@ -34,14 +40,9 @@
 	content: counter(number) ".";
 	margin-right: 4px;
 }
-.leaderboard-body {
-	font: 16px/1.2 "Roboto", sans-serif;
-	background-image: linear-gradient(315deg, #a7f58c 0%, #4EAAE3 100%);
-    box-shadow: 1px 3px #888888;
 
-}
 .leaderboard li:nth-child(1) {
-	background: #63fa55;
+	background: #5cf34e;
 }
 .leaderboard li:nth-child(2) {
 	background: #51cf46;
@@ -54,4 +55,19 @@
 }
 .leaderboard li:nth-child(5) {
 	background: #3b9932;
+}
+
+.leaderboard li:nth-child(n+6) {
+	background: #31862b;
+}
+
+
+@media (max-width: 768px) {
+	.container{
+		display: inline-block;
+		margin-top:10vh;
+		margin-left:15vw;
+		width:70vw;
+		text-align:left;
+	}
 }
