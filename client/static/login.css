@@ -23,37 +23,6 @@ input[type=text], input[type=password] {
   text-align: center;
 }
 
-/* .submit{
-    background-color:#404a3b;
-    color:white;
-    border:none;
-    border-radius:5px;
-    text-align:center;
-    vertical-align: middle;
-    margin-top:6vh;
-    width: 7.5vw;
-    height: 3vh;
-}
-.submit:hover{
-  background-color:#5b6954;
-}
-.submit:active{
-  background-color:#b0ad88;
-} */
-
-/* .submit-underline:after {
-  content: '';
-  position: relative;
-  width: 5vw;
-  transform: scaleX(0);
-  height: 0.5em;
-  top: 0.5em;
-  left: 0;
-  background-color: white;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}  */
-
  .submit{
   background-color: rgba(69, 69, 69, 0);
   border: none;
