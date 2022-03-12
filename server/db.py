@@ -54,7 +54,11 @@ def verify_user_db(username):
 
 def add_task(title, description, id, location):
     #insert ad
-    ads.insert_one({'title': title, 'description': description, 'id': id, "location": location})
+    res = ads.find_one({"title": title})
+    if res:
+        return {"code": 304, "message": "Task with the same title already exists."}
+        
+    ads.insert_one({'title': title, 'description': description, 'uid': id, "location": location})
 
     return {"code": 200, "message": "Ad added successfully"}
 
@@ -62,7 +66,9 @@ def get_tasks():
     #get ads
     ads_list = []
     for i in ads.find({}):
+        i["id"] = str(i["_id"])
         i["_id"] = None
+
         ads_list.append(i)
 
     if ads_list == []:
