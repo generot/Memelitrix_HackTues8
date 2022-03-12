@@ -96,3 +96,10 @@ def remove_task():
     data = json.loads(req)
 
     return db.remove_task_db(data["title"], data["uid"])
+
+@views.route("/tasks/abandon", methods=["POST"])
+def abandon_task():
+    req = request.get_data()
+    data = json.loads(req)
+
+    return db.abandon_task(data["title"])

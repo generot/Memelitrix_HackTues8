@@ -97,3 +97,9 @@ def remove_task_db(title, uid):
     ads.delete_many(schema)
 
     return {"code": 200, "message": "STATUS OK"}
+
+def abandon_task(title):
+    #find ad
+    res = ads.update_one({"title": title}, {"$set": {"taken_by": ""}})
+
+    return {"code": 200, "message": "STATUS OK"}
