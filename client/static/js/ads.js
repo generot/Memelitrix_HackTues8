@@ -1,9 +1,5 @@
-function adCreate(taskJson, deletable = false, uid = "") {
+function adCreate(taskJson, deletable = false) {
     let match = taskJson["taken_by"] == "";
-
-    if(!match) {
-        taskJson.title += `(${taskJson.reward} €)`;
-    }
 
     let contClass = match ? "adds-small-container" : "adds-small-container-taken";
     let btnClass = match ? "hidden-button" : "hidden-button-taken";
@@ -11,7 +7,7 @@ function adCreate(taskJson, deletable = false, uid = "") {
 
     const template = `
     <div class = "${contClass}">
-        <!--<title id="ad-title">${taskJson.title}</title>-->
+        <!--<title id="ad-title">${taskJson.title}(${taskJson.reward} €)</title>-->
         <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title">${taskJson.title}</button>\n`
         +
         (deletable ? `<button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>\n`

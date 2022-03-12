@@ -41,8 +41,10 @@ async function openTaskMenu(thisTask) {
     let obj = taskOnFocus.querySelector("#text2");
     let dplay = document.getElementById("task-accept");
 
+    console.log("Here...");
+
     if(obj.getAttribute("takenby") != "") {
-        return;   
+        return;
     }
     
     let marker = {
@@ -67,7 +69,7 @@ async function openTaskMenu(thisTask) {
 
     makeRoute(map, currPos, prevMarker);
 
-    dplay.style.display = "inline";
+    if(dplay) dplay.style.display = "inline";
 }
 //
 function closeTaskMenu() {

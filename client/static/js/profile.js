@@ -9,7 +9,7 @@ function adCreate(taskJson, deletable = false, uid = "") {
         <!--<title id="ad-title">${taskJson.title}</title>-->
         <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title">${taskJson.title}</button>
         <button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>
-        <div class="${txtClass}" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]} takenby=${taskJson.taken_by}>
+        <div class="${txtClass}" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]} takenby="">
             <span>${taskJson.description}</span>
         </div>
     </div>
@@ -20,11 +20,6 @@ function adCreate(taskJson, deletable = false, uid = "") {
 
     tmp.innerHTML = template;
     tmp.content.firstElementChild.setAttribute("task-id", taskJson.id);
-
-    if(deletable) {
-        let button = tmp.content.firstElementChild.querySelector("#title");
-        button.setAttribute("onclick", "");
-    }
     
     container.appendChild(tmp.content.firstElementChild);
 }
