@@ -79,3 +79,26 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+.example {
+    background-color: none;
+    overflow-y: scroll; /* Add the ability to scroll /
+    overflow-x: hidden; / Add the ability to scroll */
+  }
+
+
+
+
+.example {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.homepage-heading{
+    color: white; 
+    text-align: center; 
+    font-size: 10vh;
+}
