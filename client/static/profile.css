@@ -1,18 +1,15 @@
 #profile-pic {
     background: lightblue;
-    width: 30%;
-    height: 30%;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     clear:both;
     text-align:center;
-    margin-left:35%;
-    position:relative; /*makes left effective*/
-    text-align: center;
+    margin: auto;
 }
 .profile-container{
     height:80vh;
     width:40vw;
     
     clear:both;
-
 }
