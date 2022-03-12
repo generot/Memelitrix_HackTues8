@@ -123,3 +123,5 @@ def complete_task(title):
     users.update_one({"_id": user["_id"]}, {"$set": {"points": user["points"]}})
 
     remove_task_db(title, ad["uid"])
+
+    return {"code": 200, "message": "STATUS OK"}
