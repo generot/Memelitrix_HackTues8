@@ -46,26 +46,19 @@ async function adRemove(ad) {
 
 function getDistance(lon1, lat1, lon2, lat2){
     const R = 6371e3;
+
     const f1 = lat1 * Math.PI/180;
     const f2 = lat2 * Math.PI/180;
+
     const df = (lat2-lat1) * Math.PI/180;
     const dl = (lon2-lon1) * Math.PI/180;
 
-    const a = Math.sin(df/2) * Math.sin(df/2) +
-            Math.cos(f1) * Math.cos(f2) *
-            Math.sin(dl/2) * Math.sin(dl/2);
+    const a = Math.sin(df/2) * Math.sin(df/2) + Math.cos(f1) * Math.cos(f2) * Math.sin(dl/2) * Math.sin(dl/2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
     const d = R * c;
 
     return d;
-}
-
-function compare(startlocation, location1, location2){
-    let distance1 = getDistance(startlocation[0], startlocation[1], location1[0], location1[1]);
-    let distance2 = getDistance(startlocation[0], startlocation[1], location2[0], location2[1]);
-
-    return distance1 > distance2;
 }
 
 async function adFetch() {
@@ -99,7 +92,6 @@ async function adFetch() {
     });
 
     for(let i of ads) {
-        //adCreate(i.title, i.description, [... i.location], i.id == user.id);
         adCreate(i, i.uid == user.id);
     }
 }
