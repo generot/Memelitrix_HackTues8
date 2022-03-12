@@ -1,0 +1,18 @@
+#profile-pic {
+    background: lightblue;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    clear:both;
+    text-align:center;
+    margin-left:35%;
+    position:relative; /*makes left effective*/
+    text-align: center;
+}
+.profile-container{
+    height:80vh;
+    width:40vw;
+    
+    clear:both;
+
+}
