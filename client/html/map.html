@@ -3,6 +3,7 @@
         <script>
                 var map;
                 var prevMarker;
+                var taskOnFocus;
         </script>
 
         <script src="{{ url_for('static',  filename = '/js/requests.js') }}"></script>
@@ -40,9 +41,9 @@
     <script src="{{ url_for('static',  filename = 'bootstrap/js/bootstrap.bundle.js') }}"></script>
 
      <div class="device-size background-gradient" style="overflow: auto;">
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="max-width:37vw;">
             <div class="container-fluid">
-                    <a class="navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
+                    <a class="hover-underline-animation navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
                     <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                     </button>
@@ -70,28 +71,7 @@
             </div>
         </nav>
 
-        <script>
-            function openTask(){
-                document.getElementById("task-create").style.display = "inline";
-                document.getElementById("task-create").style.display = "inline";
-            }
-
-            function closeTask() {
-                document.getElementById("task-create").style.display = "none";
-                document.getElementById("task-title").value = "";
-                document.getElementById("task-desc").value = "";
-            }
-
-            function createTask(){
-                let title = document.querySelector("#task-title");
-                let desc = document.querySelector("#task-desc");
-
-                adPublish(title.value, desc.value);
-                document.getElementById("task-create").style.display = "none";
-                document.getElementById("task-title").value = "";
-                document.getElementById("task-desc").value = "";
-            }
-        </script>
+        <script src="{{ url_for('static', filename = 'js/taskDOM.js') }}"></script>
 
         <h1 style="text-align:center;">Tasks</h1>
         <button class="task-button task-button-underline" style="align-self: center;font-size:1.3em;" onclick="openTask()">Create a task</button>
@@ -106,8 +86,17 @@
             </div>
         </div>
 
+        <div display="none" id="task-accept" class="task-create-background">
+            <div class="task-accept-class"><br>
+                <label class="title-desc-accept">Do you accept this task?</label><br><br>
+                <button onclick="acceptTask()" class="konq-vihar konq-vihar-underline" style="margin-right:3vw;">Accept</button>
+                <button onclick="closeTaskMenu()" class="konq-vihar konq-vihar-underline" style="margin-left:3vw;">Decline</button>
+            </div>
+        </div>
+
         <div class="adds-big-container" id="bigCont"></div>
     </div>
+    
     <div>
        
         <div id='map' class='map'>

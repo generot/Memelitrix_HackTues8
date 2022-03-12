@@ -13,9 +13,9 @@
     <script src="{{ url_for('static',  filename = 'bootstrap/js/bootstrap.bundle.js') }}"></script>
 
     <div class="background-gradient example" style="height:100vh">
-        <nav class="navbar navbar-expand-lg navbar-light" style="float:left;">
+        <nav class="navbar navbar-expand-lg navbar-light" style="float:left;max-width: 37vw;">
             <div class="container-fluid">
-                    <a class="navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
+                    <a class="hover-underline-animation navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
                     <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                     </button>
@@ -44,10 +44,11 @@
             </div>
     </nav>
     <br><br><br>
-        <li class="headline-underline-animation" style = "text-align: center; font-size: 10vw; font-family: 'MockFlowFont';">About Us</li>
+    <div class="cards-media">
+        <li class="headline-underline-animation" style = "text-align: center;font-size:10vw; font-family: 'MockFlowFont';">About Us</li>
 <ul class="cards">
         <li>
-          <a href="" class="card">
+          <a href="https://github.com/generot" target="_blank" class="card">
             <img src="../static/images/Nakov.png" class="card__image" alt="" />
             <div class="card__overlay">
               <div class="card__header">
@@ -64,7 +65,7 @@
         </li>
       
         <li>
-          <a href="" class="card">
+          <a href="https://github.com/emildoychinov" target="_blank"  class="card">
             <img src="../static/images/Doktora.jpg" class="card__image" alt="" />
             <div class="card__overlay">
               <div class="card__header">
@@ -81,7 +82,7 @@
         </li>
       
         <li>
-          <a href="" class="card">
+          <a href="https://github.com/AlexOgn" target="_blank" class="card">
             <img src="../static/images/Sasho.png" class="card__image" alt="" />
             <div class="card__overlay">
               <div class="card__header">
@@ -98,7 +99,7 @@
         </li>
       
         <li>
-          <a href="" class="card">
+          <a href="https://github.com/Aalyth" target="_blank" class="card">
             <img src="../static/images/Dimitko.jpg" class="card__image" alt="" />
             <div class="card__overlay">
               <div class="card__header">
@@ -115,7 +116,7 @@
         </li>
       
         <li>
-          <a href="" class="card">
+          <a href="https://github.com/Venko15" target="_blank" class="card">
             <img src="../static/images/Veni.jpg" class="card__image" alt="" />
             <div class="card__overlay">
               <div class="card__header">
@@ -132,6 +133,7 @@
         </li>
       </ul>
     </div>
+  </div>
 
     <script src="{{ url_for('static', filename = 'js/requests.js') }}"></script>
     <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
