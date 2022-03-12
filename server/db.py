@@ -36,7 +36,7 @@ def check_user(username, password):
             password_hash = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
 
             if i["password"] == password_hash:
-                return {"code": 200, "message": "User logged in successfully", "username": i["name"], "id": str(i["_id"])}
+                return {"code": 200, "message": "User logged in successfully", "username": i["name"], "id": str(i["_id"]), "points": i["points"]}
             else:
                 return {"code": 400, "message": "Username or password is incorrect"}
     
@@ -47,7 +47,7 @@ def verify_user_db(username):
     user = users.find_one(schema)
 
     if user:
-        return {"code": 200, "message": "STATUS OK", "exists": True}
+        return {"code": 200, "message": "STATUS OK", "exists": True, "points": user["points"]}
 
     return {"code": 200, "message": "STATUS OK", "exists": False}
 

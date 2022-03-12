@@ -75,17 +75,32 @@
 
             <div class="profile-container">
                 <h1 id="profile-username" style="text-align: center; margin-top: 3em;"></h1>
+                <h2 id="profile-points" style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></h2>
             </div>
 
             <div class="adds-big-container" id="bigCont"></div>
 
         </div>
+
         <script>
+            const routeVer = "/user/verify";
+
             let username = document.querySelector("#profile-username");
+            let counter = document.querySelector("#profile-points");
+
             let user = window.localStorage.getItem("user");
             let jsonUser = JSON.parse(user);
-            username.innerHTML = jsonUser.username;
+
+            let points = getFromRoute(queryStringParams(routeVer, [["username", jsonUser.username]]))
+            .then(async res => {
+                let pts = await res;
+                let val = pts["points"];
+
+                username.innerHTML = jsonUser.username;
+                counter.innerHTML = `(${val} point${val == 1 ? "" : "s"})`;
+            });
         </script>
+
         <div id='map' class='map'>
             <script style="height:100vw"
                 src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js'></script>
