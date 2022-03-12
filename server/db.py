@@ -22,8 +22,6 @@ def add_user(username, password):
     salt = 32*b'\x00'
     password_hash = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
 
-    print(password_hash)
-
     #insert user
     users.insert_one({'name': username, 'password': password_hash})
 
@@ -52,15 +50,15 @@ def verify_user_db(username):
 
     return {"code": 200, "message": "STATUS OK", "exists": False}
 
-def add_task(title, description, id, location):
+def add_task(title, description, id, location, reward):
     #insert ad
     res = ads.find_one({"title": title})
     if res:
         return {"code": 304, "message": "Task with the same title already exists."}
         
-    ads.insert_one({'title': title, 'description': description, 'uid': id, "location": location})
+    ads.insert_one({'title': title, 'description': description, 'uid': id, 'location': location, 'reward': reward})
 
-    ad_obj = dict(ads.find_one({"title": title, 'uid': id}))
+    ad_obj = dict(ads.find_one({'title': title, 'uid': id}))
 
     ad_id = str(ad_obj["_id"])
     ad_obj["id"] = ad_id
