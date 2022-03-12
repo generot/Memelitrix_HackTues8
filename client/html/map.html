@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-        <script>
-                var map;
-                var prevMarker;
-                var taskOnFocus;
-        </script>
+<script>
+        var map;
+        var prevMarker;
+        var taskOnFocus;
+</script>
 
-        <script src="{{ url_for('static',  filename = '/js/requests.js') }}"></script>
-        <script src="{{ url_for('static',  filename = '/js/ads.js') }}"></script>
+<script src="{{ url_for('static',  filename = '/js/requests.js') }}"></script>
+<script src="{{ url_for('static',  filename = '/js/ads.js') }}"></script>
 
 <head>
         <!-- map render -->
@@ -15,11 +15,10 @@
         <meta http-equiv='X-UA-Compatible' content='IE=Edge' />
         <meta charset='UTF-8'>
         <title>AbilitY</title>
-        <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
-        
-        
+        <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' />
 
-        <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css'>
+        <link rel='stylesheet' type='text/css'
+                href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css'>
         <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
         <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/services/services-web.min.js"></script>
 
@@ -31,90 +30,112 @@
         <link rel="stylesheet" href="{{ url_for('static',  filename = '/bootstrap/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}">
         <link rel="stylesheet" href="{{ url_for('static',  filename = 'map.css') }}">
+        <script>(function () { window.SS = window.SS || {}; SS.Require = function (callback) { if (typeof callback === 'function') { if (window.SS && SS.EventTrack) { callback(); } else { var siteSpect = document.getElementById('siteSpectLibraries'); var head = document.getElementsByTagName('head')[0]; if (siteSpect === null && typeof head !== 'undefined') { siteSpect = document.createElement('script'); siteSpect.type = 'text/javascript'; siteSpect.src = '/__ssobj/core.js+ssdomvar.js+generic-adapter.js'; siteSpect.async = true; siteSpect.id = 'siteSpectLibraries'; head.appendChild(siteSpect); } if (window.addEventListener) { siteSpect.addEventListener('load', callback, false); } else { siteSpect.attachEvent('onload', callback, false); } } } }; })(); </script>
 </head>
 
-
-
-<script>(function(){ window.SS = window.SS || {}; SS.Require = function (callback){ if (typeof callback === 'function') { if (window.SS && SS.EventTrack) { callback(); } else { var siteSpect = document.getElementById('siteSpectLibraries'); var head = document.getElementsByTagName('head')[0]; if (siteSpect === null && typeof head !== 'undefined') { siteSpect = document.createElement('script'); siteSpect.type = 'text/javascript'; siteSpect.src = '/__ssobj/core.js+ssdomvar.js+generic-adapter.js';siteSpect.async = true; siteSpect.id = 'siteSpectLibraries'; head.appendChild(siteSpect); } if (window.addEventListener){ siteSpect.addEventListener('load', callback, false); } else { siteSpect.attachEvent('onload', callback, false); } } } };})(); </script> </head>
 <body>
-    <script src="{{ url_for('static',  filename = 'bootstrap/js/bootstrap.bundle.js') }}"></script>
+        <script src="{{ url_for('static',  filename = 'bootstrap/js/bootstrap.bundle.js') }}"></script>
 
-     <div class="device-size background-gradient" style="overflow: auto;">
-        <nav class="navbar navbar-expand-lg navbar-light" style="max-width:37vw;">
-            <div class="container-fluid">
-                    <a class="hover-underline-animation navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
-                    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                    <a class="hover-underline-animation nav-link navbar-font" aria-current="page" href="/">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                    <a class="hover-underline-animation nav-link navbar-font" href="about_us">About us</a>
-                            </li>
-                            <li class="nav-item">
-                                    <a class="hover-underline-animation-current current-page nav-link active navbar-font">Tasks</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Profile
-                                    </a>
-                                    <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                                    <li><a class="hover-underline-animation dropdown-item" href="login" id="login_drop">Log in</a></li>
-                                    <li><a class="hover-underline-animation dropdown-item" href="register" id="register_drop">Sign up</a></li>
-                                    </ul>
-                            </li>
+        <div class="device-size background-gradient" style="overflow: auto;">
+                <nav class="navbar navbar-expand-lg navbar-light" style="max-width:37vw;">
+                        <div class="container-fluid">
+                                <a class="hover-underline-animation navbar-brand navbar-font"
+                                        href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
+                                <button class="navbar-toggler ml-auto custom-toggler" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                                <li class="nav-item">
+                                                        <a class="hover-underline-animation nav-link navbar-font"
+                                                                aria-current="page" href="/">Home</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                        <a class="hover-underline-animation nav-link navbar-font"
+                                                                href="about_us">About us</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                        <a
+                                                                class="hover-underline-animation-current current-page nav-link active navbar-font">Tasks</a>
+                                                </li>
+                                                <li class="nav-item dropdown">
+                                                        <a class="nav-link dropdown-toggle navbar-font" href="#"
+                                                                id="navbarDropdown" role="button"
+                                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                                Profile
+                                                        </a>
+                                                        <ul class="dropdown-menu navbar-font"
+                                                                aria-labelledby="navbarDropdown">
+                                                                <li><a class="hover-underline-animation dropdown-item"
+                                                                                href="login" id="login_drop">Log in</a>
+                                                                </li>
+                                                                <li><a class="hover-underline-animation dropdown-item"
+                                                                                href="register" id="register_drop">Sign
+                                                                                up</a></li>
+                                                        </ul>
+                                                </li>
+                                </div>
+                        </div>
+                </nav>
+
+                <script src="{{ url_for('static', filename = 'js/taskDOM.js') }}"></script>
+
+                <h1 style="text-align:center;">Tasks</h1>
+                <button class="task-button task-button-underline" style="align-self: center;font-size:1.3em;"
+                        onclick="openTask()">Create a task</button>
+                <div display="none" id="task-create" class="task-create-background">
+                        <div class="task-create"><br>
+                                <label for="title-desc">Title</label><br>
+                                <input class="input-box" content="" type="title" placeholder="Title of the task"
+                                        id="task-title"><br>
+                                <label for="title-desc">Reward in $</label><br>
+                                <input class="input-box" content="" type="number" placeholder="Reward"
+                                        id="task-reward"><br>
+                                <label class="title-desc" for="pswrd">Description</label><br>
+                                <textarea class="input-box" content="" id="task-desc" placeholder="Description"
+                                        style="resize:none;border-radius:15px;height:20vh;text-align: left !important;"></textarea><br>
+                                <button onclick="createTask()" class="konq-vihar konq-vihar-underline"
+                                        style="margin-right:3vw;">Create</button>
+                                <button onclick="closeTask()" class="konq-vihar konq-vihar-underline"
+                                        style="margin-left:3vw;">Cancel</button>
+                        </div>
                 </div>
-            </div>
-        </nav>
 
-        <script src="{{ url_for('static', filename = 'js/taskDOM.js') }}"></script>
+                <div display="none" id="task-accept" class="task-create-background">
+                        <div class="task-accept-class"><br>
+                                <label class="title-desc-accept">Do you accept this task?</label><br><br>
+                                <button onclick="acceptTask()" class="konq-vihar konq-vihar-underline"
+                                        style="margin-right:3vw;">Accept</button>
+                                <button onclick="closeTaskMenu()" class="konq-vihar konq-vihar-underline"
+                                        style="margin-left:3vw;">Decline</button>
+                        </div>
+                </div>
 
-        <h1 style="text-align:center;">Tasks</h1>
-        <button class="task-button task-button-underline" style="align-self: center;font-size:1.3em;" onclick="openTask()">Create a task</button>
-        <div display="none" id="task-create" class="task-create-background">
-            <div class="task-create"><br>
-                <label for="title-desc">Title</label><br>
-                <input class="input-box" content="" type="title" placeholder="Title of the task" id="task-title"><br>
-                <label for="title-desc">Reward in $</label><br>
-                <input class="input-box" content="" type="number" placeholder="Reward" id="task-reward"><br>
-                <label class="title-desc" for="pswrd">Description</label><br>
-                <textarea class="input-box" content="" id="task-desc" placeholder="Description" style="resize:none;border-radius:15px;height:20vh;text-align: left !important;"></textarea><br>
-                <button onclick="createTask()" class="konq-vihar konq-vihar-underline" style="margin-right:3vw;">Create</button>
-                <button onclick="closeTask()" class="konq-vihar konq-vihar-underline" style="margin-left:3vw;">Cancel</button>
-            </div>
+                <div class="adds-big-container" id="bigCont"></div>
         </div>
 
-        <div display="none" id="task-accept" class="task-create-background">
-            <div class="task-accept-class"><br>
-                <label class="title-desc-accept">Do you accept this task?</label><br><br>
-                <button onclick="acceptTask()" class="konq-vihar konq-vihar-underline" style="margin-right:3vw;">Accept</button>
-                <button onclick="closeTaskMenu()" class="konq-vihar konq-vihar-underline" style="margin-left:3vw;">Decline</button>
-            </div>
+        <div>
+
+                <div id='map' class='map'>
+                        <script style="height:100vw"
+                                src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js'></script>
+                        <script src="{{ url_for('static', filename = 'js/marker.js') }}"></script>
+                        <script src="{{ url_for('static', filename = 'js/map.js') }}"></script>
+                        <script src="{{ url_for('static', filename = 'js/routing.js') }}"></script>
+
+                </div>
         </div>
 
-        <div class="adds-big-container" id="bigCont"></div>
-    </div>
-    
-    <div>
-       
-        <div id='map' class='map'>
-                <script style="height:100vw" src = 'https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js'></script>
-                <script src = "{{ url_for('static', filename = 'js/marker.js') }}"></script>
-                <script src = "{{ url_for('static', filename = 'js/map.js') }}"></script>
-                <script src = "{{ url_for('static', filename = 'js/routing.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
+        <script>editAfterLogin();</script>
 
-        </div>
-    </div>
+        <script>
+                adFetch();
+        </script>
 
-    <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
-    <script>editAfterLogin();</script>
-
-    <script>
-        adFetch();
-    </script>
-   
 </body>
+
 </html>
