@@ -1,7 +1,8 @@
 import pymongo
 import hashlib
 import os
-from dotenv import dotenv_values, load_dotenv
+from bson import ObjectId
+from dotenv import load_dotenv
 
 load_dotenv()
 uri = os.environ["MONGODB_URI"]
@@ -67,10 +68,20 @@ def add_task(title, description, id, location, reward):
     print(ad_obj)
     return {"code": 200, "message": "Ad added successfully", "adObject": dict(ad_obj)}
 
-def get_tasks():
+def accept_task_db(task_id, uid):
+    res = ads.update_one({"_id": ObjectId(task_id)}, {"$set": {"taken_by": uid}})
+    
+    if res.acknowledged == False:
+        return {"code": 400, "message": "Task not accepted."}
+
+    return {"code": 200, "message": "Task accepted."}
+
+def get_tasks(filter = {}):
     #get ads
     ads_list = []
-    for i in ads.find({}):
+    cursor = ads.find(filter)
+
+    for i in cursor:
         i["id"] = str(i["_id"])
         i["_id"] = None
 

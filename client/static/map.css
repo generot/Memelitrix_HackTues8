@@ -9,6 +9,17 @@
     font-weight: bold;
 }
 
+.hidden-button-taken{
+    text-align:center;  
+    background: transparent;
+    border:none;
+    color: black;
+    display: inline-block;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .container-text{
     overflow:hidden;
     white-space: nowrap;
@@ -18,6 +29,17 @@
     font-size: 0.95em;
     letter-spacing: 0.063em;
 }
+
+.container-text-taken{
+    overflow:hidden;
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    color: black;
+    font-size: 0.95em;
+    letter-spacing: 0.063em;
+}
+
 .container-text-break{
     overflow-wrap:break-word;
 }
@@ -28,8 +50,20 @@
     padding-bottom: 1vh;
     text-align:center !important;
 }
+
 .adds-small-container {
     background-color: #0076ab;
+    border-radius:15px;
+    margin-left:1vw;
+    margin-right:1vw;
+    height:auto;
+    opacity:0.3;
+    font-weight: 100;
+    margin-bottom: 1vw;
+}
+
+.adds-small-container-taken {
+    background-color: yellow;
     border-radius:15px;
     margin-left:1vw;
     margin-right:1vw;

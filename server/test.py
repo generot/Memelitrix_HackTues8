@@ -1,10 +1,20 @@
 import requests
+from pymongo import *
 
-URL = "http://127.0.0.1:5000/tasks/get"
-PARAMS = {"title": "test", "description": "test", "uid": "1", "location": "test"}
+client = MongoClient("URI HERE")
+db = client["data"]
+ads = db["ads"]
 
-r = requests.get(url = URL, params = PARAMS)
+def check_req():
+    URL = "http://127.0.0.1:5000/tasks/get"
+    PARAMS = {"title": "test", "description": "test", "uid": "1", "location": "test"}
 
-data = r.json()
+    r = requests.get(url = URL, params = PARAMS)
 
-print(data)
+    data = r.json()
+
+    print(data)
+
+def cascade_insert():
+    ads.update_many({}, {"$set": {"reward": 0, "taken_by": ""}})
+        
