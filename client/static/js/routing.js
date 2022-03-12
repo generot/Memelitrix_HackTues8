@@ -35,12 +35,18 @@ function makeRoute(map, from, to, index = -1){
 }
 
 function makeTaskRoute(map, Tasks){
-        let from = Tasks[0]
-        from.addTo(map)
+        // for(let i = 1; i < Tasks.length; i++)
+        //     if (map.getLayer("route_" + i)) {
+        //         map.removeLayer("route_" + i);
+        //         map.removeSource("route_" + i);
+        //     }
+
+        let from = Tasks[0];
+        from.addTo(map);
 
         for(let index = 1; index < Tasks.length; index++){
-            Tasks[index].addTo(map)
-            makeRoute(map, from, Tasks[index], index)
-            from = Tasks[index]
+            Tasks[index].addTo(map);
+            makeRoute(map, from, Tasks[index], index);
+            from = Tasks[index];
         }
 }
