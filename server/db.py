@@ -47,6 +47,7 @@ def fetch_users():
     all_users = []
 
     for i in cursor:
+        i["_id"] = None
         all_users.append(i)
 
     return {"code": 200, "message": "STATUS OK", "users": all_users}
