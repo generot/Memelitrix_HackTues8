@@ -8,7 +8,7 @@ function drawRoute(map, geoJSON, index = -1){
             'data' : geoJSON
         },
         'paint' : {
-            'line-color' : 'darkred',
+            'line-color' : (index === -1) ? 'green' : 'darkred',
             'line-width' : 7
         }
     })
@@ -35,11 +35,21 @@ function makeRoute(map, from, to, index = -1){
 }
 
 function makeTaskRoute(map, Tasks){
-        // for(let i = 1; i < Tasks.length; i++)
-        //     if (map.getLayer("route_" + i)) {
-        //         map.removeLayer("route_" + i);
-        //         map.removeSource("route_" + i);
-        //     }
+        let bl = null;
+        let i = 0;
+
+        for(i = 1; i < Tasks.length; i++) {
+            if (bl = map.getLayer("route_" + i)) {
+                map.removeLayer("route_" + i);
+                map.removeSource("route_" + i);
+                Tasks[i - 1].remove();
+            }
+        }
+
+        if(bl) {
+            Tasks[Tasks.length - 1].remove();
+            return;
+        }
 
         let from = Tasks[0];
         from.addTo(map);
