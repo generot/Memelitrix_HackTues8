@@ -5,7 +5,6 @@ const Marker = function(latitude, longitude){
 
 //drawing a marker on the map
 function placeMarker(map, marker){
-
     var mapMarker = new tt.Marker({
         draggable : false
     })
