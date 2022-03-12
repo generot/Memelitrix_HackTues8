@@ -1,5 +1,5 @@
 //get user location
-var userCoords
+
 var options = {     
     enableHighAccuracy: true,
     timeout: 5000,
@@ -65,24 +65,8 @@ async function initMap(Markers){
             placeMarker(map, Markers[index])
         }
 
-    var from = new tt.Marker({
-            dragable : false
-    })
-    .setLngLat([long, lat])
-    .addTo(map)
-
-    var to = new tt.Marker({
-        dragable : false
-    })
-    .setLngLat([long - 0.01, lat - 0.01])
-    .addTo(map)
-
-    makeRoute(map, from, to)
-
-    userCoords = coords
-    console.log("user coords : " + userCoords.longitude + "," + userCoords.latitude)
-
 
 }
+
 
 initMap(null);
