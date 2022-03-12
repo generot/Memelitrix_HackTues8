@@ -16,13 +16,17 @@
         <meta charset='UTF-8'>
         <title>AbilitY</title>
         <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
+        
         <style>
             #map {
                 width: auto;
                 height: 100vh;
             }
          </style>
-        <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css'/>
+
+        <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css'>
+        <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
+        <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/services/services-web.min.js"></script>
 
         <!-- other -->
         <meta charset="UTF-8">
@@ -103,6 +107,7 @@
                 <script style="height:100vw" src = 'https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js'></script>
                 <script src = "{{ url_for('static', filename = 'js/marker.js') }}"></script>
                 <script src = "{{ url_for('static', filename = 'js/map.js') }}"></script>
+                <script src = "{{ url_for('static', filename = 'js/routing.js') }}"></script>
 
         </div>
     </div>

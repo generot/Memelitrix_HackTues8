@@ -7,7 +7,7 @@ const Marker = function(latitude, longitude){
 function placeMarker(map, marker){
 
     var mapMarker = new tt.Marker({
-        dragable : true
+        dragable : false
     })
     .setLngLat([marker.lon, marker.lat])
     .addTo(map)
