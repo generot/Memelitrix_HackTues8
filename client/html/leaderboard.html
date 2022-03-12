@@ -48,12 +48,10 @@
                     <div class="leaderboard">
                         <div class="head">
                             <i class="fas fa-crown"></i>
-                            <h1>Most active Players</h1>
+                            <h1>Best helpers</h1>
                         </div>
                         <div class="leaderboard-body" >
-                            <ol>
-                                
-                                
+                            <ol id="leaderboard-js">
                             </ol>
                         </div>
                     </div>
@@ -61,7 +59,9 @@
 
         <script src="{{ url_for('static', filename = 'js/requests.js') }}"></script>
         <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/leaderboard.js') }}"></script>
         <script>editAfterLogin();</script>
+        <script>usersFetch();</script>
         
 </body>
 </html>
