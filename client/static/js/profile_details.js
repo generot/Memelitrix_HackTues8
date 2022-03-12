@@ -13,6 +13,7 @@ function editAfterLogin() {
         let registerBtn = document.querySelector("#register_drop");
         
         if(user) {
+            
             loginBtn.innerHTML = user.username;
             loginBtn.setAttribute("href", "/user/profile")
             console.log(loginBtn.attributes);

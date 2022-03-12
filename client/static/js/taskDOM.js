@@ -9,6 +9,7 @@ function closeTask() {
     document.getElementById("task-create").style.display = "none";
     document.getElementById("task-title").value = "";
     document.getElementById("task-desc").value = "";
+    document.getElementById("task-reward").value = "";
 }
 
 function createTask(){
@@ -18,7 +19,7 @@ function createTask(){
     adPublish(title.value, desc.value);
     document.getElementById("task-create").style.display = "none";
     document.getElementById("task-title").value = "";
-    document.getElementById("task-desc").value = "";
+    document.getElementById("task-reward").value = "";
 }
 
 async function openTaskMenu(thisTask) {

@@ -63,8 +63,9 @@ def accept_task():
     description = data["description"]
     uid = data["uid"]
     location = data["location"]
+    reward = data["reward"]
 
-    return db.add_task(title, description, uid, location)
+    return db.add_task(title, description, uid, location, reward)
 
 @views.route("/tasks/get", methods=["GET"])
 def return_tasks():
