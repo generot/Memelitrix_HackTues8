@@ -7,13 +7,13 @@ function drawRoute(map, geoJSON){
             'data' : geoJSON
         },
         'paint' : {
-            'line-color' : 'blue',
+            'line-color' : 'green',
             'line-width' : 7
         }
     })
 }
-function makeRoute(map, from, to){
-        
+
+function makeRoute(map, from, to){        
         //options and coordinates to draw to
         var options = {
             key : '8tSnq5o8nrZgIPZ5S9uTAH9tXReLKote',
@@ -27,7 +27,6 @@ function makeRoute(map, from, to){
 
         .then(
             function(routeData){
-                console.log(routeData)
                 var geo = routeData.toGeoJson();
                 drawRoute(map, geo)
             }

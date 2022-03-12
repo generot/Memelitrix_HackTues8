@@ -60,7 +60,14 @@ def add_task(title, description, id, location):
         
     ads.insert_one({'title': title, 'description': description, 'uid': id, "location": location})
 
-    return {"code": 200, "message": "Ad added successfully"}
+    ad_obj = dict(ads.find_one({"title": title, 'uid': id}))
+
+    ad_id = str(ad_obj["_id"])
+    ad_obj["id"] = ad_id
+    ad_obj["_id"] = None
+
+    print(ad_obj)
+    return {"code": 200, "message": "Ad added successfully", "adObject": dict(ad_obj)}
 
 def get_tasks():
     #get ads
@@ -77,7 +84,7 @@ def get_tasks():
     return {"code": 200, "message": "Ads retrieved successfully", "ads": ads_list}
 
 def remove_task_db(title, uid):
-    schema = {"title": title, "id": uid}
+    schema = {"title": title, "uid": uid}
     ads.delete_many(schema)
 
     return {"code": 200, "message": "STATUS OK"}

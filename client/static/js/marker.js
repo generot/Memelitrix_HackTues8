@@ -5,12 +5,11 @@ const Marker = function(latitude, longitude){
 
 //drawing a marker on the map
 function placeMarker(map, marker){
-
     var mapMarker = new tt.Marker({
-        dragable : false
+        draggable : false
     })
     .setLngLat([marker.lon, marker.lat])
-    .addTo(map)
+    .addTo(map);
 
     var lnglat = new tt.LngLat(marker.lon, marker.lat);
     map.setCenter(lnglat);
