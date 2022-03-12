@@ -42,39 +42,33 @@
         <script src="{{ url_for('static',  filename = 'bootstrap/js/bootstrap.bundle.js') }}"></script>
 
         <div class="device-size background-gradient example" style="overflow: auto;">
-            <nav class="navbar navbar-expand-lg navbar-light" style="max-width:37vw;">
+            <nav class="navbar navbar-expand-lg navbar-light" style="float:left;max-width:37vw;">
                 <div class="container-fluid">
-                    <a class="hover-underline-animation navbar-brand navbar-font"
-                        href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
-                    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="hover-underline-animation navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
+                    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="hover-underline-animation nav-link navbar-font" aria-current="page"
-                                    href="/">Home</a>
+                                <a class="hover-underline-animation nav-link navbar-font" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="hover-underline-animation nav-link navbar-font" href="/about_us">About us</a>
+                                <a class="hover-underline-animation nav-link navbar-font" href="about_us">About us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="hover-underline-animation nav-link active navbar-font" href="/map">Tasks</a>
+                                <a class="hover-underline-animation nav-link navbar-font" href="map">Tasks</a>
                             </li>
-                            <li class="nav-item ">
-                                <a class="nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li class="nav-item dropdown">
+                                <a class="current-page active nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Profile
                                 </a>
-                                <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                                    <li><a class="hover-underline-animation dropdown-item" href="/login"
-                                            id="login_drop">Log in</a></li>
-                                    <li><a class="hover-underline-animation dropdown-item" href="/register"
-                                            id="register_drop">Sign up</a></li>
+                                <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown" style="max-width:5vw;">
+                                    <li><a class="hover-underline-animation-current current-page dropdown-item" id="login_drop">Log in</a>  </li>
+                                    <li><a class="hover-underline-animation dropdown-item" href="register" id="register_drop">Sign up</a></li>
                                 </ul>
                             </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
