@@ -26,7 +26,7 @@
 }
 
 .leaderboard-body{
-	width: 50.5vw !important;
+	width: 50.5vw;
 	margin-left: -1.65vw;
 }
 
@@ -69,14 +69,19 @@
 	.container{
 		display: inline-block;
 		margin-top:5vh;
-		margin-left:15vw;
-		max-width:1000vw;
-		width:100px;
+		margin-left:10vw;
+		width:100vw;
 		text-align:left;
 	}
+
+	.leaderboard-body{
+		width: 70vw;
+	}
+
 	.leaderboard-headline{
+		display: inline-block;
 		background: transparent;
 		margin-left: 0vw;
-		width:52.5vw;
+		width:72.5vw;
 	}
 }

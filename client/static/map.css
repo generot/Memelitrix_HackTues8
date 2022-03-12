@@ -264,6 +264,11 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.task{
+    align-self:center;
+    font-size:1.3em;
+}
+
 @media (max-width: 768px) {
     .device-size{
         height:55vh;
@@ -315,5 +320,11 @@ input[type=number] {
         background: #0096a1; 
         opacity: 0.8;
         text-align:center;
+    }
+
+    .task{
+        margin-left:35vw;
+        margin-right:35vw;
+        width:30vw;
     }
 }
