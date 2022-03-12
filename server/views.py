@@ -70,6 +70,10 @@ def accept_task():
 def return_tasks():
     return db.get_tasks()
 
+@views.route("/tasks/filter")
+def return_filtered_tasks():
+    pass
+
 @views.route("/tasks/remove", methods=["POST"])
 def remove_task():
     req = request.get_data()

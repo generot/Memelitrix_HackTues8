@@ -18,6 +18,11 @@ function adCreate(taskJson, deletable = false) {
 
     tmp.innerHTML = template;
     tmp.content.firstElementChild.setAttribute("task-id", taskJson.id);
+
+    if(deletable) {
+        let button = tmp.content.firstElementChild.querySelector("#title");
+        button.setAttribute("onclick", "");
+    }
     
     container.appendChild(tmp.content.firstElementChild);
 }
@@ -100,6 +105,7 @@ async function adPublish(title_, desc_) {
     const route = "/tasks/add";
     const geocoords = await getCoords();
     const user = JSON.parse(window.localStorage.getItem("user"));
+    console.log(user);
 
     if(!user) {
         return null;
