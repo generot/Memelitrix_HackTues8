@@ -1,5 +1,9 @@
 function adCreate(taskJson, deletable = false, uid = "") {
-    let match = taskJson["taken_by"] != uid;
+    let match = taskJson["taken_by"] == "";
+
+    if(!match) {
+        taskJson.title += `(${taskJson.reward} €)`;
+    }
 
     let contClass = match ? "adds-small-container" : "adds-small-container-taken";
     let btnClass = match ? "hidden-button" : "hidden-button-taken";
@@ -107,7 +111,7 @@ async function adFetch() {
     }
 }
 
-async function adPublish(title_, desc_) {
+async function adPublish(title_, desc_, reward_) {
     const route = "/tasks/add";
     const geocoords = await getCoords();
     const user = JSON.parse(window.localStorage.getItem("user"));
@@ -123,6 +127,7 @@ async function adPublish(title_, desc_) {
         description: desc_,
         uid: user.id,
         location: coords,
+        reward: reward_,
         taken_by: ""
     }, route);
 

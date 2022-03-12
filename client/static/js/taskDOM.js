@@ -15,8 +15,12 @@ function closeTask() {
 function createTask(){
     let title = document.querySelector("#task-title");
     let desc = document.querySelector("#task-desc");
+    let reward = document.querySelector("#task-reward").value;
 
-    adPublish(title.value, desc.value);
+    reward = reward.replace(/\D/, "");
+
+    adPublish(title.value, desc.value, reward);
+
     document.getElementById("task-create").style.display = "none";
     document.getElementById("task-title").value = "";
     document.getElementById("task-reward").value = "";
@@ -32,9 +36,12 @@ async function openTaskMenu(thisTask) {
     taskOnFocus = thisTask;
 
     let obj = taskOnFocus.querySelector("#text2");
-    let user = JSON.parse(window.localStorage.getItem("user"));
     let dplay = document.getElementById("task-accept");
 
+    if(obj.getAttribute("takenby") != "") {
+        return;   
+    }
+    
     let marker = {
         lon: obj.getAttribute("locationlong"),
         lat: obj.getAttribute("locationlat")
@@ -56,10 +63,6 @@ async function openTaskMenu(thisTask) {
     .setLngLat([coords.longitude, lat]);
 
     makeRoute(map, currPos, prevMarker);
-
-    if(obj.getAttribute("takenby") == user.id) {
-        return;   
-    }
 
     dplay.style.display = "inline";
 }
