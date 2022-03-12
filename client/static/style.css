@@ -99,14 +99,48 @@
     text-align: center;
     color: white;
     font-size: 8em;
+    font-family: "Noto Sans JP", sans-serif;
 }
 
 .homepage-subtitle{
     color: white;
     font-size: 4.5em;
+    font-family: "Noto Sans JP", sans-serif;
+    max-width: 45vw;
+    margin-top: 30vh;
 }
 
 .homepage-text{
     color: white;
     font-size: 3em;
+    font-family: "Noto Sans JP", sans-serif;
+    max-width: 45vw;
+}
+
+@media (max-width: 768px){
+    .homepage-heading{
+        display:inline-block;
+        text-align: center;
+        color: white;
+        font-size: 5em;
+        font-family: "Noto Sans JP", sans-serif;
+        margin: 0 0em;
+    }
+
+    .homepage-subtitle{
+        position: relative;
+        max-width: 95vw;
+        width: 95vw;
+        text-align: center;
+        font-size: 3.5em;
+        margin-top: 12.5vh;
+    }
+    
+    .homepage-text{
+        position: relative;
+        max-width: 95vw;
+        width: 95vw;
+        text-align: center;
+        font-size: 2em;
+    }
 }
