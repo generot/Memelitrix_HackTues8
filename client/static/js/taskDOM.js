@@ -30,6 +30,27 @@ function createTask(){
     document.getElementById("task-desc").value = "";
 }
 
+async function toggleProfileTask(thisTask) {
+    if(!taskOnFocus) {
+        openTaskMenu(thisTask);
+    } else {
+        let obj = taskOnFocus.querySelector("#text2");
+
+        if (map.getLayer("route")) {
+            map.removeLayer("route");
+            map.removeSource("route");
+        }
+
+        obj.classList.remove("container-text-break");
+        obj.classList.add("container-text");
+
+        if(prevMarker) prevMarker.remove();
+
+        prevMarker = null;
+        taskOnFocus = null;
+    }
+}
+
 async function openTaskMenu(thisTask) {
     if(prevMarker){
         prevMarker.remove();
@@ -73,16 +94,17 @@ async function openTaskMenu(thisTask) {
 
     if(dplay) dplay.style.display = "inline";
 }
-//
+
 function closeTaskMenu() {
     let obj = taskOnFocus.querySelector("#text2");
+    let dplay = document.getElementById("task-accept");
     taskOnFocus = null;
 
     obj.classList.remove("container-text-break");
     obj.classList.add("container-text");
 
     if(prevMarker) prevMarker.remove();
-    document.getElementById("task-accept").style.display = "none";
+    if(dplay) dplay.style.display = "none";
 }
 
 function acceptTask() {

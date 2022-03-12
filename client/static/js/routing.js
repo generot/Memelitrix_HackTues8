@@ -35,7 +35,6 @@ function makeRoute(map, from, to, index = -1){
 }
 
 function makeTaskRoute(map, Tasks){
-
         let from = Tasks[0]
         from.addTo(map)
 
@@ -44,6 +43,4 @@ function makeTaskRoute(map, Tasks){
             makeRoute(map, from, Tasks[index], index)
             from = Tasks[index]
         }
-
-
 }
