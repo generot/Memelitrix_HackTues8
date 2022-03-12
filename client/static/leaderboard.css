@@ -61,13 +61,21 @@
 	background: #31862b;
 }
 
+.leaderboard-headline{
+	text-align:center;
+}
 
 @media (max-width: 768px) {
 	.container{
 		display: inline-block;
 		margin-top:10vh;
-		margin-left:15vw;
+		margin-left:20vw;
 		width:70vw;
 		text-align:left;
+	}
+	.leaderboard-headline{
+		background: transparent;
+		margin-left: 0vw;
+		width:52.5vw;
 	}
 }
