@@ -12,8 +12,8 @@ function drawRoute(map, geoJSON){
         }
     })
 }
-function makeRoute(map, from, to){
-        
+
+function makeRoute(map, from, to){        
         //options and coordinates to draw to
         var options = {
             key : '8tSnq5o8nrZgIPZ5S9uTAH9tXReLKote',
