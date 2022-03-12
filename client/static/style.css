@@ -84,10 +84,7 @@
     background-color: none;
     overflow-y: scroll; /* Add the ability to scroll /
     overflow-x: hidden; / Add the ability to scroll */
-  }
-
-
-
+}
 
 .example {
     -ms-overflow-style: none;
@@ -97,8 +94,19 @@
   display: none;
 }
 
+
 .homepage-heading{
-    color: white; 
-    text-align: center; 
-    font-size: 10vh;
+    text-align: center;
+    color: white;
+    font-size: 8em;
+}
+
+.homepage-subtitle{
+    color: white;
+    font-size: 4.5em;
+}
+
+.homepage-text{
+    color: white;
+    font-size: 3em;
 }
