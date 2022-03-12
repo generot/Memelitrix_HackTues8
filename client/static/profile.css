@@ -1,4 +1,21 @@
 #profile-pic {
+    background: lightblue;
+    width: 20vw;
+    height: 30vh;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    clear:both;
+    margin-left: 200px;
+}
+
+.profile-container{
+    height:30vh;
+    width:30vw;
+    
+    clear:both;
+}
+.hidden-button{
   background: lightblue;
   width: 100px;
   height: 100px;

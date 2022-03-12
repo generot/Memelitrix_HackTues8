@@ -3,15 +3,15 @@ function adCreate(taskJson, deletable = false) {
 
     let contClass = match ? "adds-small-container" : "adds-small-container-taken";
     let btnClass = match ? "hidden-button" : "hidden-button-taken";
+    let checkClass = match ? "check-button" : "check-button-taken";
     let txtClass = match ? "container-text" : "container-text-taken";
 
     const template = `
     <div class = "${contClass}">
-        <!--<title id="ad-title">${taskJson.title}</title>-->
-        <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title" tl="${taskJson.title}">${taskJson.title}(${taskJson.reward} €)</button>\n`
+        <button class="${btnClass} ad-title task-open-button" onclick="openTaskMenu(this.parentElement);" id="title" tl="${taskJson.title}">${taskJson.title}(${taskJson.reward} €)</button>\n`
         +
-        (deletable ? `<button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>
-        <button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">✓</button>\n`
+        (deletable ? `<button class="${btnClass}" style="color:rgba(255, 0, 0);float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;!important;" onclick="adRemove(this)">X</button>
+        <button class="${checkClass}" style="color:green;float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;" onclick="adRemove(this)">✓</button>\n`
                   : `\n`)
         +
         `<div class="${txtClass}" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]} takenby=${taskJson.taken_by}>
