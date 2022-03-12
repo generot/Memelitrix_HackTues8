@@ -24,6 +24,10 @@ def login_page():
 def register_page():
     return render_template("register.html")
 
+@views.route("/leaderboard")
+def leaderboard_page():
+    return render_template("leaderboard.html")
+
 @views.route("/user/profile")
 def profile():
     return render_template("profile.html")

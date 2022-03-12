@@ -8,6 +8,7 @@
          
         <link rel="stylesheet" href="{{ url_for('static',  filename = '/bootstrap/css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',  filename = 'leaderboard.css') }}">
 </head>
 <body>
         <script src="{{ url_for('static',  filename = 'bootstrap/js/bootstrap.bundle.js') }}"></script>
@@ -29,9 +30,6 @@
                                         <li class="nav-item">
                                                 <a class="hover-underline-animation  nav-link navbar-font" href="map">Tasks</a>
                                         </li>
-                                        <li class="nav-item">
-                                                <a class="hover-underline-animation  nav-link navbar-font" href="leaderboard">Leaderboard</a>
-                                        </li>
                                         <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Profile
@@ -46,22 +44,24 @@
                         </div>
                 </nav>
                 <br><br><br>
-                <h1 class="homepage-heading" style="margin-top:10%;">Welcome to Ability</h1>
-                
-                <br>
-                <div style="float: left; margin-left: 2vw; text-align: left; ">
-                        <h1 class="homepage-subtitle">What is Ability?</h1>
-                        <h1 class="homepage-text">Ability is an easy-to-use web app that allows relatives of disabled people, or disabled people themselves to request help from volunteers. It is deisgned for "HackTUES ∞" by students in 10th grade in TUES.</h1>
+                <div class="container">
+                    <div class="leaderboard">
+                        <div class="head">
+                            <i class="fas fa-crown"></i>
+                            <h1>Best helpers</h1>
+                        </div>
+                        <div class="leaderboard-body" >
+                            <ol id="leaderboard-js">
+                            </ol>
+                        </div>
+                    </div>
                 </div>
-                
-                <div style="text-align: right;margin-right: 0; float: right; margin-right: 2vw;">
-                        <h1 class="homepage-subtitle">What problems does Ability solve?</h1>
-                        <h1 class="homepage-text">Abilty makes it very easy</h1>
-                </div>
-        </div>
-        
+
         <script src="{{ url_for('static', filename = 'js/requests.js') }}"></script>
         <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/leaderboard.js') }}"></script>
         <script>editAfterLogin();</script>
+        <script>usersFetch();</script>
+        
 </body>
 </html>

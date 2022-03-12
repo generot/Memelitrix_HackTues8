@@ -48,7 +48,12 @@ def fetch_users():
 
     for i in cursor:
         i["_id"] = None
+<<<<<<< HEAD
+=======
+        i["password"] = None
+>>>>>>> 5ece5d4076b8f1ff0dee5eb721e17e8d28ae8163
         all_users.append(i)
+        
 
     return {"code": 200, "message": "STATUS OK", "users": all_users}
 
@@ -124,3 +129,5 @@ def complete_task(title):
     users.update_one({"_id": user["_id"]}, {"$set": {"points": user["points"]}})
 
     remove_task_db(title, ad["uid"])
+
+    return {"code": 200, "message": "STATUS OK"}
