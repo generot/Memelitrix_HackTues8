@@ -103,3 +103,13 @@ def abandon_task(title):
     res = ads.update_one({"title": title}, {"$set": {"taken_by": ""}})
 
     return {"code": 200, "message": "STATUS OK"}
+
+def complete_task(title):
+    #find ad
+    ad = ads.find_one({"title": title})
+
+    user = users.find_one({"_id": ObjectId(ad["taken_by"])})
+    user["points"] += 1
+    users.update_one({"_id": user["_id"]}, {"$set": {"points": user["points"]}})
+
+    remove_task_db(title, ad["uid"])
