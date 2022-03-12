@@ -68,9 +68,10 @@
 @media (max-width: 768px) {
 	.container{
 		display: inline-block;
-		margin-top:10vh;
-		margin-left:20vw;
-		width:70vw;
+		margin-top:5vh;
+		margin-left:15vw;
+		max-width:1000vw;
+		width:100px;
 		text-align:left;
 	}
 	.leaderboard-headline{
