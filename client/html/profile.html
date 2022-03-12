@@ -7,7 +7,7 @@
 </script>
 
 <script src="{{ url_for('static',  filename = '/js/requests.js') }}"></script>
-<script src="{{ url_for('static',  filename = '/js/ads.js') }}"></script>
+<script src="{{ url_for('static',  filename = '/js/profile.js') }}"></script>
 
 <head>
     <!-- map render -->
@@ -31,11 +31,11 @@
     <link rel="stylesheet" href="{{ url_for('static',  filename = '/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',  filename = 'style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',  filename = 'map.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',  filename = 'profile.css') }}">
 </head>
 
 <body>
     <script>(function () { window.SS = window.SS || {}; SS.Require = function (callback) { if (typeof callback === 'function') { if (window.SS && SS.EventTrack) { callback(); } else { var siteSpect = document.getElementById('siteSpectLibraries'); var head = document.getElementsByTagName('head')[0]; if (siteSpect === null && typeof head !== 'undefined') { siteSpect = document.createElement('script'); siteSpect.type = 'text/javascript'; siteSpect.src = '/__ssobj/core.js+ssdomvar.js+generic-adapter.js'; siteSpect.async = true; siteSpect.id = 'siteSpectLibraries'; head.appendChild(siteSpect); } if (window.addEventListener) { siteSpect.addEventListener('load', callback, false); } else { siteSpect.attachEvent('onload', callback, false); } } } }; })(); </script>
-    </head>
 
     <body>
         <script src="{{ url_for('static',  filename = 'bootstrap/js/bootstrap.bundle.js') }}"></script>
@@ -57,7 +57,7 @@
                                     href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="hover-underline-animation nav-link navbar-font" href="about_us">About us</a>
+                                <a class="hover-underline-animation nav-link navbar-font" href="/about_us">About us</a>
                             </li>
                             <li class="nav-item">
                                 <a
@@ -69,9 +69,9 @@
                                     Profile
                                 </a>
                                 <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                                    <li><a class="hover-underline-animation dropdown-item" href="login"
+                                    <li><a class="hover-underline-animation dropdown-item" href="/login"
                                             id="login_drop">Log in</a></li>
-                                    <li><a class="hover-underline-animation dropdown-item" href="register"
+                                    <li><a class="hover-underline-animation dropdown-item" href="/register"
                                             id="register_drop">Sign up</a></li>
                                 </ul>
                             </li>
@@ -83,12 +83,14 @@
                 <h1 id="profile-username" style="text-align: center; margin-top: 3em;"></h1>
             </div>
 
+            <div class="adds-big-container" id="bigCont"></div>
+
         </div>
         <script>
             let username = document.querySelector("#profile-username");
             let user = window.localStorage.getItem("user");
             let jsonUser = JSON.parse(user);
-            username.innerHTML = jsonUser.username; 
+            username.innerHTML = jsonUser.username;
         </script>
         <div id='map' class='map'>
             <script style="height:100vw"
@@ -101,6 +103,10 @@
 
         <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
         <script>editAfterLogin();</script>
+
+        <script>
+            adFetch();
+        </script>
     </body>
 
 </html>
