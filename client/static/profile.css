@@ -15,14 +15,7 @@
     
     clear:both;
 }
-.hidden-button{
-  background: lightblue;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  clear: both;
-  margin: auto;
-}
+
 
 .profile-container {
     margin-bottom: 3em;

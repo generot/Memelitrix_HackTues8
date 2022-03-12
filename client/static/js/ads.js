@@ -5,14 +5,13 @@ function adCreate(taskJson, deletable = false) {
     let btnClass = match ? "hidden-button" : "hidden-button-taken";
     let txtClass = match ? "container-text" : "container-text-taken";
 
-    let checkClass = match ? "check-button" : "check-button-taken";
-
     const template = `
     <div class = "${contClass}">
+        <!--<title id="ad-title">${taskJson.title}</title>-->
         <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title" tl="${taskJson.title}">${taskJson.title}(${taskJson.reward} €)</button>\n`
         +
-        (deletable ? `<button class="${btnClass}" style="color:rgba(255, 0, 0);float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;!important;" onclick="adRemove(this)">X</button>
-        <button class="${checkClass}" style="color:green;float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;" onclick="adComplete(this)">✓</button>\n`
+        (deletable ? `<button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>
+        <button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">✓</button>\n`
                   : `\n`)
         +
         `<div class="${txtClass}" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]} takenby=${taskJson.taken_by}>
@@ -35,25 +34,15 @@ function adCreate(taskJson, deletable = false) {
     container.appendChild(tmp.content.firstElementChild);
 }
 
-async function adComplete(ad) {
-    const route = "/tasks/complete";
-
-    let parent = ad.parentElement;
-    let title_ = parent.querySelector("#title").getAttribute("tl");
-
-    parent.remove();
-
-    await sendToRoute({
-        title: title_
-    }, route);
-}
-
 async function adRemove(ad) {
     const route = "/tasks/remove";
     let user = JSON.parse(window.localStorage.getItem("user"));
 
+    console.log(ad.parentElement);
+
     let parent = ad.parentElement;
     let title_ = parent.querySelector("#title").getAttribute("tl");
+    console.log(title_);
 
     if(!user) {
         return null;
