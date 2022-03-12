@@ -42,8 +42,8 @@ async function openTaskMenu(thisTask) {
 
     coords = await getCoords()
 
-    var long = coords.longitute
-    var lat = coords.latitude
+    var long = coords.longitute;
+    var lat = coords.latitude;
 
     currPos = new tt.Marker({
         dragable : false

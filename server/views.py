@@ -24,6 +24,9 @@ def login_page():
 def register_page():
     return render_template("register.html")
 
+@views.route("/user/profile")
+def profile():
+    return render_template("profile.html")
 
 @views.route("/user/register", methods=["POST"])
 def register():
@@ -66,6 +69,10 @@ def accept_task():
 @views.route("/tasks/get", methods=["GET"])
 def return_tasks():
     return db.get_tasks()
+
+@views.route("/tasks/filter")
+def return_filtered_tasks():
+    pass
 
 @views.route("/tasks/remove", methods=["POST"])
 def remove_task():

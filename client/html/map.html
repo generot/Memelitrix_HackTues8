@@ -17,12 +17,7 @@
         <title>AbilitY</title>
         <meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'/>
         
-        <style>
-            #map {
-                width: auto;
-                height: 100vh;
-            }
-         </style>
+        
 
         <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css'>
         <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
@@ -82,9 +77,9 @@
         <div display="none" id="task-create" class="task-create-background">
             <div class="task-create"><br>
                 <label for="title-desc">Title</label><br>
-                <input content="" type="title" placeholder="Title of the task" id="task-title" style="border-radius:10px;width:26vw;"><br>
+                <input class="input-box" content="" type="title" placeholder="Title of the task" id="task-title"><br>
                 <label class="title-desc" for="pswrd">Description</label><br>
-                <textarea content="" id="task-desc" placeholder="Description" style="resize:none;border-radius:15px;width:26vw;height:25vh;"></textarea><br>
+                <textarea class="input-box" content="" id="task-desc" placeholder="Description" style="resize:none;border-radius:15px;height:25vh;"></textarea><br>
                 <button onclick="createTask()" class="konq-vihar konq-vihar-underline" style="margin-right:3vw;">Create</button>
                 <button onclick="closeTask()" class="konq-vihar konq-vihar-underline" style="margin-left:3vw;">Cancel</button>
             </div>
