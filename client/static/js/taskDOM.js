@@ -19,7 +19,13 @@ function createTask(){
     document.getElementById("task-desc").value = "";
 }
 
-function openTaskMenu(thisTask) {
+async function openTaskMenu(thisTask) {
+    
+    if (map.getLayer("route")) {
+        map.removeLayer("route");
+        map.removeSource("route")
+    }
+
     taskOnFocus = thisTask;
 
     let obj = taskOnFocus.querySelector("#text2");
@@ -33,6 +39,18 @@ function openTaskMenu(thisTask) {
     obj.classList.add("container-text-break");
 
     prevMarker = placeMarker(map, marker);
+
+    coords = await getCoords()
+
+    var long = coords.longitute
+    var lat = coords.latitude
+
+    currPos = new tt.Marker({
+        dragable : false
+    })
+    .setLngLat([coords.longitude, lat])
+
+    makeRoute(map, currPos, prevMarker)
     document.getElementById("task-accept").style.display = "inline";
 }
 
