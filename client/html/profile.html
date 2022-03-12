@@ -119,7 +119,7 @@
         <script>editAfterLogin();</script>
 
         <script>
-            (async function() {
+            (async function fetchPath() {
                 allTaskPos = await adFetch();
 
                 let crd = await getCoords();
@@ -136,8 +136,6 @@
 
                     return newMrk;
                 });
-
-                console.log(allTaskPos);
 
                 let btn = document.querySelector("#task-route-btn");
                 btn.setAttribute("onclick", "makeTaskRoute(map, allTaskPos)")
