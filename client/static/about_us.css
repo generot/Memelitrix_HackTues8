@@ -156,3 +156,13 @@ body {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+.cards-media{
+  display:inline;
+}
+
+@media (max-width: 768px){
+  .cards-media{
+    display:inline-block;
+  }
+}
