@@ -1,21 +1,15 @@
 import pymongo
 import hashlib
 import os
-from dotenv import dotenv_values
+from dotenv import dotenv_values, load_dotenv
 
-config = dotenv_values(os.path.abspath("../.env"))
-
-#uri = "mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority"
-uri = config["MONGODB_URI"]
+load_dotenv()
+uri = os.environ["MONGODB_URI"]
 
 client = pymongo.MongoClient(uri)
 db = client["data"]
 users = db["users"]
 ads = db["ads"]
-
-#uri_nasko = "mongodb+srv://Nakov:GolemataPatka@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority" 
-
-#uri = uri_nasko
 
 def add_user(username, password):
     #check if user exists

@@ -14,6 +14,7 @@ function editAfterLogin() {
         
         if(user) {
             loginBtn.innerHTML = user.username;
+            loginBtn.setAttribute("href", "/user/profile")
         
             registerBtn.innerHTML = "Sign out";
             registerBtn.signOut = true;
