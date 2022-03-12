@@ -42,6 +42,16 @@ def check_user(username, password):
     
     return {"code": 400, "message": "Username or password is incorrect"}
 
+def fetch_users():
+    cursor = users.find({})
+    all_users = []
+
+    for i in cursor:
+        all_users.append(i)
+
+    return {"code": 200, "message": "STATUS OK", "users": all_users}
+
+
 def verify_user_db(username):
     schema = {"name": username}
     user = users.find_one(schema)
