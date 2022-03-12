@@ -25,10 +25,10 @@ function Open_Close_Description(obj,text){
 function adCreate(title, desc, location, deletable = false) {
     const template = `
     <div class = "adds-small-container">
-        <title id="ad-title">${title}</title>
+        <!-- <title id="ad-title" class="hidden-button">${title}</title> -->
         <button class="hidden-button"  onclick="Open_Close_Description(this.parentElement)" id="title">${title}</button>\n`
         +
-        (deletable ? `<button class="hidden-button" style="float:right;vertical-align:text-top;font-size: 20px;top:-100px " onclick="adRemove(this)">X</button>\n`
+        (deletable ? `<button class="hidden-button" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>\n`
                   : `\n`)
         +
         `<div class="container-text" id="text2" name="deaznam" locationlong="${location[0]}" locationlat=${location[1]}>

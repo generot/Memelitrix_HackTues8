@@ -1,50 +1,73 @@
-.bckg{
-    width: 40%;
-    overflow:scroll;
-}
-
 .hidden-button{
+    text-align:center;  
     background: transparent;
     border:none;
-    color:white;
-    align-items: left;
+    color: white;
+    display: inline-block;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
 }
+
 .container-text{
     overflow:hidden;
     white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    color: #fff;
+    font-size: 0.95em;
+    letter-spacing: 0.063em;
 }
 .container-text-break{
     overflow-wrap:break-word;
 }
 .adds-big-container{
-    margin: auto;
-    width: auto;
-    height:auto;
-    border: 3px solid #73AD21;
-    padding: 10px;
-    border: 1px solid rgb(63, 221, 84);
-    border-width : 5px;
-    box-sizing: border-box;
-    border-radius:10px;
-    text-align: left;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align:center !important;
 }
 .adds-small-container {
-    margin: auto;
-    width: auto;
+    background-color: #0076ab;
+    border-radius:15px;
+    margin-left:1vw;
+    margin-right:1vw;
     height:auto;
-    border: 3px solid #73AD21;
-    padding: 10px;
-    border: 1px solid rgb(154, 245, 94);
-    border-width : 5px;
-    box-sizing: border-box;
-    border-radius:10px;
-    margin-bottom:10px;
-    text-align: left;
+    opacity:0.3;
+    font-weight: 100;
+    margin-bottom: 1vw;
 }
 
-.adds-small-container:hover {
-    background-color: darkgreen;
-    opacity: 0.3;
+.adds-small-container:hover{
+    color: #404a3b !important;
+    background-color: #a7f58c;
+    opacity: 1;
+    border-radius:15px;
+}
+
+.adds-small-container:hover button{
+    color: #404a3b !important;
+    background-color: #a7f58c;
+    opacity: 1;
+    border-radius:15px;
+}
+
+.adds-small-conatiner:after button{
+    text-decoration: underline solid transparent;
+}
+
+.adds-small-container:hover button{
+    color: #404a3b !important;
+    background-color: #a7f58c;
+    opacity: 1;
+    border-radius:15px;
+    text-decoration: underline solid 0.25vh;
+    transition: 0.25s;
+}
+
+.adds-small-container:hover:after button{
+    transform-origin: bottom left;
 }
 
 .close {
@@ -52,6 +75,7 @@
     position: absolute;
     transform: translate(0%, -50%);
   }
+
 .map{
     width: 65vw;
     height: 100vh;
@@ -64,9 +88,6 @@
 }
 
 @media (max-width: 768px) {
-    .bckg{
-        width: 40%;
-    }
     .device-size{
         height:auto;
         width:100vw;
