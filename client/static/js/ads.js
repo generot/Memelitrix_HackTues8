@@ -29,7 +29,8 @@ async function adRemove(ad) {
     console.log(ad.parentElement);
 
     let parent = ad.parentElement;
-    let title_ = parent.querySelector("#ad-title").innerHTML;
+    let title_ = parent.querySelector("#title").innerHTML;
+    console.log(title_);
 
     if(!user) {
         return null;
@@ -63,7 +64,7 @@ async function adFetch() {
 
     for(let i of ads) {
         //adCreate(i.title, i.description, [... i.location], i.id == user.id);
-        adCreate(i, i.id == user.id);
+        adCreate(i, i.uid == user.id);
     }
 }
 
@@ -78,12 +79,13 @@ async function adPublish(title_, desc_) {
 
     let coords = [geocoords.longitude, geocoords.latitude];
 
-    adCreate(title_, desc_, coords, true);
-
-    await sendToRoute({
+    let response = await sendToRoute({
         title: title_,
         description: desc_,
         uid: user.id,
         location: coords
     }, route);
+
+    let jsonBody = await response.json();
+    adCreate(jsonBody["adObject"], true);
 }
