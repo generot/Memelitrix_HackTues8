@@ -1,6 +1,7 @@
-function drawRoute(map, geoJSON){
+function drawRoute(map, geoJSON, index = -1){
+
     layer = map.addLayer({
-        'id' : 'route',
+        'id' : (index === -1) ? 'route' : 'route_' + index,
         'type' : 'line',
         'source' : {
             'type' : 'geojson',
@@ -13,7 +14,7 @@ function drawRoute(map, geoJSON){
     })
 }
 
-function makeRoute(map, from, to){        
+function makeRoute(map, from, to, index = -1){        
         //options and coordinates to draw to
         var options = {
             key : '8tSnq5o8nrZgIPZ5S9uTAH9tXReLKote',
@@ -28,7 +29,21 @@ function makeRoute(map, from, to){
         .then(
             function(routeData){
                 var geo = routeData.toGeoJson();
-                drawRoute(map, geo)
+                drawRoute(map, geo, index)
             }
         )
+}
+
+function makeTaskRoute(map, Tasks){
+
+        let from = Tasks[0]
+        from.addTo(map)
+
+        for(let index = 1; index < Tasks.length; index++){
+            Tasks[index].addTo(map)
+            makeRoute(map, from, Tasks[index], index)
+            from = Tasks[index]
+        }
+
+
 }

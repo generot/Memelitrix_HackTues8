@@ -27,10 +27,13 @@ function createTask(){
 }
 
 async function openTaskMenu(thisTask) {
+    if(prevMarker){
+        prevMarker.remove();
+    }
     
     if (map.getLayer("route")) {
         map.removeLayer("route");
-        map.removeSource("route")
+        map.removeSource("route");
     }
 
     taskOnFocus = thisTask;
@@ -54,19 +57,19 @@ async function openTaskMenu(thisTask) {
 
     coords = await getCoords();
 
-    var long = coords.longitute;
+    var long = coords.longitude;
     var lat = coords.latitude;
 
     currPos = new tt.Marker({
         dragable : false
     })
-    .setLngLat([coords.longitude, lat]);
+    .setLngLat([long, lat]);
 
     makeRoute(map, currPos, prevMarker);
 
     dplay.style.display = "inline";
 }
-
+//
 function closeTaskMenu() {
     let obj = taskOnFocus.querySelector("#text2");
     taskOnFocus = null;
@@ -88,11 +91,22 @@ function acceptTask() {
     obj.classList.remove("container-text-break");
     obj.classList.add("container-text");
 
+    taskOnFocus.classList.remove("adds-small-container");
+    taskOnFocus.classList.add("adds-small-container-taken");
+
+    taskOnFocus.querySelector("#title").classList.remove("hidden-button");
+    taskOnFocus.querySelector("#title").classList.add("hidden-button-taken");
+
+    taskOnFocus.querySelector("#text2").classList.remove("container-text");
+    taskOnFocus.querySelector("#text2").classList.add("container-text-taken");
+
     let taskId = taskOnFocus.getAttribute("task-id");
     taskOnFocus = null;
-
+    
     sendToRoute({
         id: taskId,
         uid: user.id
     }, route);
+
+    
 }

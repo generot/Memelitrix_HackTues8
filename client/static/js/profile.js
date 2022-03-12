@@ -1,20 +1,16 @@
 function adCreate(taskJson, deletable = false, uid = "") {
-    let match = taskJson["taken_by"] != uid;
 
-    let contClass = match ? "adds-small-container" : "adds-small-container-taken";
-    let btnClass = match ? "hidden-button" : "hidden-button-taken";
-    let txtClass = match ? "container-text" : "container-text-taken";
+    let contClass ="adds-small-container";
+    let btnClass = "hidden-button";
+    let txtClass = "container-text";
 
     const template = `
     <div class = "${contClass}">
         <!--<title id="ad-title">${taskJson.title}</title>-->
-        <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title">${taskJson.title}</button>\n`
-        +
-        (deletable ? `<button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>\n`
-                  : `\n`)
-        +
-        `<div class="${txtClass}" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]} takenby=${taskJson.taken_by}>
-            <span>${taskJson.description}</span>        
+        <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title">${taskJson.title}</button>
+        <button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>
+        <div class="${txtClass}" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]} takenby=${taskJson.taken_by}>
+            <span>${taskJson.description}</span>
         </div>
     </div>
     `
@@ -105,7 +101,7 @@ async function adFetch() {
     });
 
     for(let i of ads) {
-        if(i.taken_by == user.uid) {
+        if(i.taken_by == user.id) {
             adCreate(i, true, user.id);
         }
     }

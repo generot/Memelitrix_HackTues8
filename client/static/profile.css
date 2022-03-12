@@ -4,13 +4,11 @@
   height: 100px;
   border-radius: 50%;
   clear: both;
-  margin-left: 200px;
+  margin: auto;
 }
 
 .profile-container {
-  height: 30vh;
-  width: 30vw;
-
+    margin-bottom: 3em;
   clear: both;
 }
 .hidden-button {
