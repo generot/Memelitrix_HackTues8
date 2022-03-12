@@ -14,7 +14,7 @@
     border-radius: 50%;
 }
 .leaderboard {
-	background: grey
+	background: transparent;
 }
 .leaderboard ol {
     counter-reset: number;
@@ -42,7 +42,7 @@
 }
 
 .leaderboard li:nth-child(1) {
-	background: #63fa55;
+	background: #5cf34e;
 }
 .leaderboard li:nth-child(2) {
 	background: #51cf46;
@@ -56,6 +56,11 @@
 .leaderboard li:nth-child(5) {
 	background: #3b9932;
 }
+
+.leaderboard li:nth-child(n+6) {
+	background: #31862b;
+}
+
 
 @media (max-width: 768px) {
 	.container{
