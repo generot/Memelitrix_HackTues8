@@ -48,10 +48,7 @@ def fetch_users():
 
     for i in cursor:
         i["_id"] = None
-<<<<<<< HEAD
-=======
         i["password"] = None
->>>>>>> 5ece5d4076b8f1ff0dee5eb721e17e8d28ae8163
         all_users.append(i)
         
 
