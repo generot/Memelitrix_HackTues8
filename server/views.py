@@ -54,6 +54,10 @@ def verify_user():
 
     return db.verify_user_db(username)
 
+@views.route("/user/fetchAll", methods=["GET"])
+def fetch_all_users():
+    return db.fetch_users()
+
 @views.route("/tasks/add", methods=["POST"])
 def accept_task():
     req = request.get_data()
