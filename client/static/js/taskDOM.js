@@ -23,10 +23,13 @@ function createTask(){
 }
 
 async function openTaskMenu(thisTask) {
+    if(prevMarker){
+        prevMarker.remove();
+    }
     
     if (map.getLayer("route")) {
         map.removeLayer("route");
-        map.removeSource("route")
+        map.removeSource("route");
     }
 
     taskOnFocus = thisTask;
@@ -47,13 +50,13 @@ async function openTaskMenu(thisTask) {
 
     coords = await getCoords();
 
-    var long = coords.longitute;
+    var long = coords.longitude;
     var lat = coords.latitude;
 
     currPos = new tt.Marker({
         dragable : false
     })
-    .setLngLat([coords.longitude, lat]);
+    .setLngLat([long, lat]);
 
     makeRoute(map, currPos, prevMarker);
 

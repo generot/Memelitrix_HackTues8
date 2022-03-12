@@ -1,5 +1,5 @@
 function adCreate(taskJson, deletable = false, uid = "") {
-    let match = taskJson["taken_by"] != uid;
+    let match = taskJson["taken_by"] == "";
 
     let contClass = match ? "adds-small-container" : "adds-small-container-taken";
     let btnClass = match ? "hidden-button" : "hidden-button-taken";
