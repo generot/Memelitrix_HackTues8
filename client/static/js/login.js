@@ -25,7 +25,7 @@ async function login(form) {
         let obj = {
             username: response["username"],
             id: response["id"]
-        }
+        };
 
         window.localStorage.setItem("user", JSON.stringify(obj));
         window.location.replace("/");
