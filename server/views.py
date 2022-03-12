@@ -82,7 +82,6 @@ def accept_task_user():
 
     return db.accept_task_db(task_id, uid)
 
-
 @views.route("/tasks/filter", methods=["GET"])
 def return_filtered_tasks():
     data = request.args.to_dict()
@@ -103,3 +102,10 @@ def abandon_task():
     data = json.loads(req)
 
     return db.abandon_task(data["title"])
+
+@views.route("/tasks/complete", methods=["POST"])
+def complete_task():
+    req = request.get_data()
+    data = json.loads(req)
+
+    return db.complete_task(data["title"])

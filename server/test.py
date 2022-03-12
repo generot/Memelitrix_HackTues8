@@ -1,9 +1,9 @@
 import requests
 from pymongo import *
 
-client = MongoClient("URI HERE")
+client = MongoClient("mongodb+srv://Sasho:Rikoshet123321@ability.hsrp9.mongodb.net/Ability?retryWrites=true&w=majority")
 db = client["data"]
-ads = db["ads"]
+ads = db["users"]
 
 def check_req():
     URL = "http://127.0.0.1:5000/tasks/get"
@@ -16,5 +16,4 @@ def check_req():
     print(data)
 
 def cascade_insert():
-    ads.update_many({}, {"$set": {"reward": 0, "taken_by": ""}})
-        
+    ads.update_many({}, {"$set": {"points": 0}})
