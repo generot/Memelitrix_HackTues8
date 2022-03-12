@@ -12,7 +12,7 @@
 <body>
     <script src="{{ url_for('static',  filename = '/bootstrap/js/bootstrap.bundle.js') }}"></script>
     <div class="background-gradient" style="height:100vh;width:100vw">
-    	<nav class="navbar navbar-expand-lg navbar-light" style="float:left;">
+    	<nav class="navbar navbar-expand-lg navbar-light" style="float:left;max-width:37vw;">
             <div class="container-fluid">
                 <a class="hover-underline-animation navbar-brand navbar-font" href="https://github.com/generot/Memelitrix_HackTues8">AbilitY</a>
                 <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,11 +33,9 @@
                             <a class="current-page active nav-link dropdown-toggle navbar-font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Profile
                             </a>
-                            <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown">
-                            	<li><a class="hover-underline-animation dropdown-item" id="login_drop" href="login">Log in</a>
-                                </li>
-                                <li><a class="hover-underline-animation-current current-page dropdown-item" id="register_drop">Sign up</a>
-                                </li>
+                            <ul class="dropdown-menu navbar-font" aria-labelledby="navbarDropdown" style="max-width:5vw;">
+                            	<li><a class="hover-underline-animation dropdown-item" id="login_drop" href="login">Log in</a></li>
+                                <li><a class="hover-underline-animation-current current-page dropdown-item" id="register_drop">Sign up</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -47,15 +45,17 @@
 
         <div class="center-block">
             <div class = "form_text" id="form_register" style="justify-content:center;" >
-                <label for="uname"><b>Username<b></b></b></label><br>
+                <label class="user-pass" style="margin-top: 0; font-size: 2em; text-decoration:underline; font-weight: bold;">Sign Up</label><br>
+                <label class="user-pass" for="uname">Username</label><br>
                 <input type="text" placeholder="Enter Username" name="uname" required="" id="usernm"><br>
-                <label for="pswrd"><b>Password<b></b></label><br>
+                <label class="user-pass" for="pswrd">Password</label><br>
                 <input id = "pass" type="password" placeholder="Password" name="pswrd" required="" id="pass"><br>  
-                <label for="Cpswrd"><b>Confirm Password<b></b></label><br>
-                <input id = "Cpass" type="password" placeholder="Confirm Password" name="Cpswrd" required="" id="Cpass"><br>  
+                <!-- <label for="Cpswrd"><b>Confirm Password<b></b></label><br> -->
+                <input style="margin-top:0;" id="Cpass" type="password" placeholder="Confirm Password" name="Cpswrd" required="" id="Cpass"><br>  
+            
+                <button style="margin-top:0.75vh;" class="submit submit-underline" onclick="verifyAndRegister(document.getElementById('form_register'))" >Register</button>
             </div>
-                <button  class = "submit" onclick="verifyAndRegister(document.getElementById('form_register'))" >Register</button>
-            </div>
+        </div>
         
     <script src="{{ url_for('static', filename = 'js/profile_details.js') }}"></script>
     <script>editAfterLogin();</script>

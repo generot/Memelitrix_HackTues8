@@ -15,7 +15,7 @@ function editAfterLogin() {
         if(user) {
             loginBtn.innerHTML = user.username;
             loginBtn.setAttribute("href", "/user/profile")
-        
+            console.log(loginBtn.attributes);
             registerBtn.innerHTML = "Sign out";
             registerBtn.signOut = true;
             registerBtn.setAttribute("href", "");
@@ -24,5 +24,5 @@ function editAfterLogin() {
                 window.location.replace("/");
             `);
         }
-    });   
+    });
 }

@@ -1,38 +1,14 @@
-function Open_Close_Description(obj,text){
-    if(prevMarker) {
-        prevMarker.remove();
-        prevMarker = null;
-    }
-
-    obj = obj.querySelector("#text2");
-
-    if(obj.classList.contains("container-text")){
-        let marker = {
-            lon: obj.getAttribute("locationlong"),
-            lat: obj.getAttribute("locationlat")
-        };
-
-        prevMarker = placeMarker(map, marker);
-
-        obj.classList.remove("container-text")
-        obj.classList.add("container-text-break")
-    }else{
-        obj.classList.remove("container-text-break")
-        obj.classList.add("container-text")
-    }
-}
-
-function adCreate(title, desc, location, deletable = false) {
+function adCreate(taskJson, deletable = false) {
     const template = `
     <div class = "adds-small-container">
-        <!-- <title id="ad-title" class="hidden-button">${title}</title> -->
-        <button class="hidden-button"  onclick="Open_Close_Description(this.parentElement)" id="title">${title}</button>\n`
+        <!--<title id="ad-title">${taskJson.title}</title>-->
+        <button class="hidden-button task-open-button" onclick="openTaskMenu(this.parentElement);" id="title">${taskJson.title}</button>\n`
         +
         (deletable ? `<button class="hidden-button" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>\n`
                   : `\n`)
         +
-        `<div class="container-text" id="text2" name="deaznam" locationlong="${location[0]}" locationlat=${location[1]}>
-            <span>${desc}</span>                   
+        `<div class="container-text" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]}>
+            <span>${taskJson.description}</span>        
         </div>
     </div>
     `
@@ -41,6 +17,7 @@ function adCreate(title, desc, location, deletable = false) {
     let container = document.querySelector("#bigCont");
 
     tmp.innerHTML = template;
+    tmp.content.firstElementChild.setAttribute("task-id", taskJson.id);
     
     container.appendChild(tmp.content.firstElementChild);
 }
@@ -85,7 +62,8 @@ async function adFetch() {
     let ads = jsonObj.ads;
 
     for(let i of ads) {
-        adCreate(i.title, i.description, [... i.location], i.id == user.id);
+        //adCreate(i.title, i.description, [... i.location], i.id == user.id);
+        adCreate(i, i.id == user.id);
     }
 }
 
@@ -105,7 +83,7 @@ async function adPublish(title_, desc_) {
     await sendToRoute({
         title: title_,
         description: desc_,
-        id: user.id,
+        uid: user.id,
         location: coords
     }, route);
 }
