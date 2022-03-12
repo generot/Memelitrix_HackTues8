@@ -1,12 +1,10 @@
-function Open_Close_Description(_this, _obj){
+function Open_Close_Description(_obj){
     // if(prevMarker) {
     //     prevMarker.remove();
     //     prevMarker = null;
     // }
 
-    let obj = _obj.querySelector("#text2");
-
-    if(obj.classList.contains("container-text")){
+    //if(obj.classList.contains("container-text")){
         // let marker = {
         //     lon: obj.getAttribute("locationlong"),
         //     lat: obj.getAttribute("locationlat")
@@ -16,19 +14,19 @@ function Open_Close_Description(_this, _obj){
 
         openTaskMenu(_obj);
 
-        obj.classList.remove("container-text")
-        obj.classList.add("container-text-break")
-    }else{
-        obj.classList.remove("container-text-break")
-        obj.classList.add("container-text")
-    }
+    //     obj.classList.remove("container-text")
+    //     obj.classList.add("container-text-break")
+    // }else{
+    //     obj.classList.remove("container-text-break")
+    //     obj.classList.add("container-text")
+    // }
 }
 
 function adCreate(taskJson, deletable = false) {
     const template = `
     <div class = "adds-small-container">
         <!--<title id="ad-title">${taskJson.title}</title>-->
-        <button class="hidden-button task-open-button" onclick="Open_Close_Description(this, this.parentElement);" id="title">${taskJson.title}</button>\n`
+        <button class="hidden-button task-open-button" onclick="Open_Close_Description(this.parentElement);" id="title">${taskJson.title}</button>\n`
         +
         (deletable ? `<button class="hidden-button" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>\n`
                   : `\n`)
