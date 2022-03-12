@@ -63,7 +63,7 @@ async function openTaskMenu(thisTask) {
 
     dplay.style.display = "inline";
 }
-
+//
 function closeTaskMenu() {
     let obj = taskOnFocus.querySelector("#text2");
     taskOnFocus = null;
@@ -85,11 +85,22 @@ function acceptTask() {
     obj.classList.remove("container-text-break");
     obj.classList.add("container-text");
 
+    taskOnFocus.classList.remove("adds-small-container");
+    taskOnFocus.classList.add("adds-small-container-taken");
+
+    taskOnFocus.querySelector("#title").classList.remove("hidden-button");
+    taskOnFocus.querySelector("#title").classList.add("hidden-button-taken");
+
+    taskOnFocus.querySelector("#text2").classList.remove("container-text");
+    taskOnFocus.querySelector("#text2").classList.add("container-text-taken");
+
     let taskId = taskOnFocus.getAttribute("task-id");
     taskOnFocus = null;
-
+    
     sendToRoute({
         id: taskId,
         uid: user.id
     }, route);
+
+    
 }
