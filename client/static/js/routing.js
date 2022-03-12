@@ -8,7 +8,7 @@ function drawRoute(map, geoJSON, index = -1){
             'data' : geoJSON
         },
         'paint' : {
-            'line-color' : 'green',
+            'line-color' : 'darkred',
             'line-width' : 7
         }
     })
