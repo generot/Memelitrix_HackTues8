@@ -30,14 +30,13 @@ function adCreate(taskJson, deletable = false, uid = "") {
 }
 
 async function adRemove(ad) {
-    const route = "/tasks/remove";
+    const route = "/tasks/abandon";
     let user = JSON.parse(window.localStorage.getItem("user"));
 
     console.log(ad.parentElement);
 
     let parent = ad.parentElement;
     let title_ = parent.querySelector("#title").innerHTML;
-    console.log(title_);
 
     if(!user) {
         return null;
@@ -47,7 +46,6 @@ async function adRemove(ad) {
 
     let resp = await sendToRoute({
         title: title_,
-        uid: user["id"]
     }, route);
 }
 
