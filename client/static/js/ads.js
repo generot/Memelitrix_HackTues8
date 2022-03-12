@@ -1,13 +1,19 @@
-function adCreate(taskJson, deletable = false) {
+function adCreate(taskJson, deletable = false, uid = "") {
+    let match = taskJson["taken_by"] != uid;
+
+    let contClass = match ? "adds-small-container" : "adds-small-container-taken";
+    let btnClass = match ? "hidden-button" : "hidden-button-taken";
+    let txtClass = match ? "container-text" : "container-text-taken";
+
     const template = `
-    <div class = "adds-small-container">
+    <div class = "${contClass}">
         <!--<title id="ad-title">${taskJson.title}</title>-->
-        <button class="hidden-button task-open-button" onclick="openTaskMenu(this.parentElement);" id="title">${taskJson.title}</button>\n`
+        <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title">${taskJson.title}</button>\n`
         +
-        (deletable ? `<button class="hidden-button" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>\n`
+        (deletable ? `<button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>\n`
                   : `\n`)
         +
-        `<div class="container-text" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]}>
+        `<div class="${txtClass}" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]} takenby=${taskJson.taken_by}>
             <span>${taskJson.description}</span>        
         </div>
     </div>
@@ -97,7 +103,7 @@ async function adFetch() {
     });
 
     for(let i of ads) {
-        adCreate(i, i.uid == user.id);
+        adCreate(i, i.uid == user.id, user.id);
     }
 }
 
@@ -105,7 +111,6 @@ async function adPublish(title_, desc_) {
     const route = "/tasks/add";
     const geocoords = await getCoords();
     const user = JSON.parse(window.localStorage.getItem("user"));
-    console.log(user);
 
     if(!user) {
         return null;
@@ -117,7 +122,8 @@ async function adPublish(title_, desc_) {
         title: title_,
         description: desc_,
         uid: user.id,
-        location: coords
+        location: coords,
+        taken_by: ""
     }, route);
 
     let jsonBody = await response.json();

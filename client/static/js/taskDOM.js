@@ -1,3 +1,5 @@
+const route = "/tasks/accept";
+
 function openTask(){
     document.getElementById("task-create").style.display = "inline";
     document.getElementById("task-create").style.display = "inline";
@@ -29,6 +31,8 @@ async function openTaskMenu(thisTask) {
     taskOnFocus = thisTask;
 
     let obj = taskOnFocus.querySelector("#text2");
+    let user = JSON.parse(window.localStorage.getItem("user"));
+    let dplay = document.getElementById("task-accept");
 
     let marker = {
         lon: obj.getAttribute("locationlong"),
@@ -40,7 +44,7 @@ async function openTaskMenu(thisTask) {
 
     prevMarker = placeMarker(map, marker);
 
-    coords = await getCoords()
+    coords = await getCoords();
 
     var long = coords.longitute;
     var lat = coords.latitude;
@@ -48,10 +52,15 @@ async function openTaskMenu(thisTask) {
     currPos = new tt.Marker({
         dragable : false
     })
-    .setLngLat([coords.longitude, lat])
+    .setLngLat([coords.longitude, lat]);
 
-    makeRoute(map, currPos, prevMarker)
-    document.getElementById("task-accept").style.display = "inline";
+    makeRoute(map, currPos, prevMarker);
+
+    if(obj.getAttribute("takenby") == user.id) {
+        return;   
+    }
+
+    dplay.style.display = "inline";
 }
 
 function closeTaskMenu() {
@@ -67,6 +76,7 @@ function closeTaskMenu() {
 
 function acceptTask() {
     let obj = taskOnFocus.querySelector("#text2");
+    let user = JSON.parse(window.localStorage.getItem("user"));
 
     if(prevMarker) prevMarker.remove();
     document.getElementById("task-accept").style.display = "none";
@@ -77,5 +87,8 @@ function acceptTask() {
     let taskId = taskOnFocus.getAttribute("task-id");
     taskOnFocus = null;
 
-    //Send request to server
+    sendToRoute({
+        id: taskId,
+        uid: user.id
+    }, route);
 }

@@ -70,9 +70,23 @@ def accept_task():
 def return_tasks():
     return db.get_tasks()
 
-@views.route("/tasks/filter")
+@views.route("/tasks/accept", methods=["POST"])
+def accept_task_user():
+    req = request.get_data()
+    data = json.loads(req)
+
+    task_id = data["id"]
+    uid = data["uid"]
+
+    return db.accept_task_db(task_id, uid)
+
+
+@views.route("/tasks/filter", methods=["GET"])
 def return_filtered_tasks():
-    pass
+    data = request.args.to_dict()
+    uid = data["uid"]
+
+    return db.get_tasks({ "taken_by": uid })
 
 @views.route("/tasks/remove", methods=["POST"])
 def remove_task():
