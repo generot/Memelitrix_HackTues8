@@ -113,7 +113,6 @@
     opacity: 1;
     border-radius:15px;
     text-decoration: underline solid 0.25vh;
-    transition: 0.25s;
 }
 
 .adds-small-container:hover:after button{
