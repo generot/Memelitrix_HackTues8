@@ -64,7 +64,7 @@ async function initMap(Markers){
         for(let index = 0; index < Markers.length; index++){
             placeMarker(map, Markers[index])
         }
-
+        
 
 }
 
