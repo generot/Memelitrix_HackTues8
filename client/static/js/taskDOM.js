@@ -3,6 +3,9 @@ const route = "/tasks/accept";
 function openTask(){
     document.getElementById("task-create").style.display = "inline";
     document.getElementById("task-create").style.display = "inline";
+    document.getElementById("task-title").value = "";
+    document.getElementById("task-desc").value = "";
+    document.getElementById("task-reward").value = "";
 }
 
 function closeTask() {
@@ -24,6 +27,7 @@ function createTask(){
     document.getElementById("task-create").style.display = "none";
     document.getElementById("task-title").value = "";
     document.getElementById("task-reward").value = "";
+    document.getElementById("task-desc").value = "";
 }
 
 async function openTaskMenu(thisTask) {
