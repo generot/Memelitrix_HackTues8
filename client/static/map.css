@@ -77,7 +77,7 @@
   }
 
 .map{
-    width: 65vw;
+    width: 70vw;
     height: 100vh;
 }
 
@@ -91,27 +91,12 @@
     font-size: 25pt;
 }
 
-@media (max-width: 768px) {
-    .device-size{
-        height:auto;
-        width:100vw;
-    }
-
-    .map{
-        display:inline-block;
-        margin-left:0px;
-        margin-top:0px;
-        width: 100vw;
-        height: auto;
-    }
-}
-
 .task-button{
     border:none;
     text-align:center;
     vertical-align: middle;
     position: relative;
-    left:40%;
+    margin-left:40%;
     width: 30%;
     margin-bottom:2vh;
     margin-top:1vh;
@@ -212,4 +197,63 @@
     font-weight: 550 !important;
     color: #fff !important;
     font-size: 0.875em;
+}
+
+.input-box{
+    border-radius:10px;
+    width:26vw;
+}
+
+@media (max-width: 768px) {
+    .device-size{
+        height:55vh;
+        width:100vw;
+    }
+
+    .map{
+        display:inline-block;
+        margin-left:0;
+        margin-top:0vh;
+        width: 100vw;
+        height: 45vh;
+    }
+
+    .task-create{
+        display: block;
+        position: inherit;
+        top: 20vh;
+        left: 15vw;
+        z-index: 3;
+        padding: 10;
+        width: 70vw;
+        height: 50vh;
+        border-radius : 15px;
+        background: #0096a1; 
+        opacity: 0.8;
+        text-align:center;
+    }
+
+    .input-box{
+        border-radius:10px;
+        width:65vw;
+    }
+
+    #task-desc{
+        height:30vh !important;
+    }
+
+    .task-accept-class{
+        display: block;
+        position: inherit;
+        top: 25vh;
+        left: 20vw;
+        z-index: 3;
+        padding: 10;
+        width: 60vw;
+        height: 25vh;
+        border-radius : 15px;
+        background: #0096a1; 
+        opacity: 0.8;
+        text-align:center;
+    }
 }
