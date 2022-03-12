@@ -1,0 +1,60 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+a {
+	display: inline-block;
+	color: #333;
+	text-decoration: none;
+}
+.blog {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+/* container */
+.container {
+	width: 50vw;
+	height: 100vh;
+	align-self: center;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+    border-radius: 50%;
+}
+.leaderboard {
+	background: grey
+}
+.leaderboard ol {
+    counter-reset: number; /* 定義和初始化計數器 */
+
+}
+.leaderboard li {
+	padding: 16px;
+	display: flex;
+    border: 1px solid rgb(0,250,154)
+}
+.leaderboard li mark {
+	flex-grow: 1;
+	color: snow;
+	background-color: transparent;
+}
+.leaderboard li:before {
+	counter-increment: number; /* 遞增計數器 */
+	content: counter(number) "."; /* 顯示計數器 */
+	margin-right: 4px;
+}
+.leaderboard-body {
+	font: 16px/1.2 "Roboto", sans-serif;
+	background-image: linear-gradient(315deg, #a7f58c 0%, #4EAAE3 100%);
+    box-shadow: 1px 3px #888888;
+
+}
