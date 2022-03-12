@@ -63,6 +63,10 @@
     float:left;
 }
 
+.title-desc-accept {
+    font-size: 25pt;
+}
+
 @media (max-width: 768px) {
     .bckg{
         width: 40%;
@@ -132,6 +136,21 @@
     padding: 10;
     width: 30vw;
     height: 40vh;
+    border-radius : 15px;
+    background: #0096a1; 
+    opacity: 0.8;
+    text-align:center;
+}
+
+.task-accept-class{
+    display: block;
+    position: inherit;
+    top: 30vh;
+    left: 35vw;
+    z-index: 3;
+    padding: 10;
+    width: 30vw;
+    height: 18vh;
     border-radius : 15px;
     background: #0096a1; 
     opacity: 0.8;

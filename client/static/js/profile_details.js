@@ -23,5 +23,5 @@ function editAfterLogin() {
                 window.location.replace("/");
             `);
         }
-    });   
+    });
 }
