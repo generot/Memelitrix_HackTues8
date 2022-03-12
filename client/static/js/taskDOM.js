@@ -41,8 +41,6 @@ async function openTaskMenu(thisTask) {
     let obj = taskOnFocus.querySelector("#text2");
     let dplay = document.getElementById("task-accept");
 
-    console.log("Here...");
-
     if(obj.getAttribute("takenby") != "") {
         return;
     }
@@ -98,6 +96,7 @@ function acceptTask() {
 
     taskOnFocus.querySelector("#title").classList.remove("hidden-button");
     taskOnFocus.querySelector("#title").classList.add("hidden-button-taken");
+    taskOnFocus.querySelector("#title").setAttribute("onclick", "");
 
     taskOnFocus.querySelector("#text2").classList.remove("container-text");
     taskOnFocus.querySelector("#text2").classList.add("container-text-taken");
@@ -109,6 +108,4 @@ function acceptTask() {
         id: taskId,
         uid: user.id
     }, route);
-
-    
 }

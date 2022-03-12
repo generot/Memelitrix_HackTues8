@@ -1,5 +1,4 @@
-function adCreate(taskJson, deletable = false, uid = "") {
-
+function adCreate(taskJson) {
     let contClass ="adds-small-container";
     let btnClass = "hidden-button";
     let txtClass = "container-text";
@@ -7,7 +6,7 @@ function adCreate(taskJson, deletable = false, uid = "") {
     const template = `
     <div class = "${contClass}">
         <!--<title id="ad-title">${taskJson.title}</title>-->
-        <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title">${taskJson.title}</button>
+        <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title" tl="${taskJson.title}">${taskJson.title}(${taskJson.reward} €)</button>
         <button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>
         <div class="${txtClass}" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]} takenby="">
             <span>${taskJson.description}</span>
@@ -31,7 +30,7 @@ async function adRemove(ad) {
     console.log(ad.parentElement);
 
     let parent = ad.parentElement;
-    let title_ = parent.querySelector("#title").innerHTML;
+    let title_ = parent.querySelector("#title").getAttribute("tl");
 
     if(!user) {
         return null;

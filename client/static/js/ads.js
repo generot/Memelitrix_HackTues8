@@ -7,8 +7,8 @@ function adCreate(taskJson, deletable = false) {
 
     const template = `
     <div class = "${contClass}">
-        <!--<title id="ad-title">${taskJson.title}(${taskJson.reward} €)</title>-->
-        <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title">${taskJson.title}</button>\n`
+        <!--<title id="ad-title">${taskJson.title}</title>-->
+        <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title" tl="${taskJson.title}">${taskJson.title}(${taskJson.reward} €)</button>\n`
         +
         (deletable ? `<button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>\n`
                   : `\n`)
@@ -40,7 +40,7 @@ async function adRemove(ad) {
     console.log(ad.parentElement);
 
     let parent = ad.parentElement;
-    let title_ = parent.querySelector("#title").innerHTML;
+    let title_ = parent.querySelector("#title").getAttribute("tl");
     console.log(title_);
 
     if(!user) {
