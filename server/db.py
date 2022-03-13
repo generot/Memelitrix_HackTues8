@@ -24,7 +24,7 @@ def add_user(username, password):
     password_hash = hashlib.pbkdf2_hmac('sha256', password, salt, 100000)
 
     #insert user
-    users.insert_one({'name': username, 'password': password_hash})
+    users.insert_one({'name': username, 'password': password_hash, 'points': 0})
 
     return {"code": 200, "message": "User registered successfully"}
 
