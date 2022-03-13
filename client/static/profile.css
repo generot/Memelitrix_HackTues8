@@ -274,6 +274,7 @@ input[type="number"] {
   margin-left:8.25vw;
   margin-right:8.25vw;
   margin-bottom:0;
+  width:15vw;
 }
 
 @media (max-width: 768px) {
