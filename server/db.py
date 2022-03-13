@@ -100,9 +100,6 @@ def get_tasks(filter = {}):
 
         ads_list.append(i)
 
-    if ads_list == []:
-        return {"code": 400, "message": "No ads"}
-
     return {"code": 200, "message": "Ads retrieved successfully", "ads": ads_list}
 
 def remove_task_db(title, uid):

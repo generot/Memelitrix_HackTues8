@@ -12,7 +12,7 @@ function adCreate(taskJson, deletable = false) {
         + (deletable ? `<button class="${btnClass}" style="color:red;float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;" onclick="adRemove(this)">X</button>\n` : `\n`)
         + (deletable && !match ? `<button class="${btnClass}" style="color:green;float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;;" onclick="adComplete(this)">✓</button>\n`: `\n`)
         + `<div class="${txtClass}" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]} takenby=${taskJson.taken_by}>
-            <span>${taskJson.description}</span>        
+            <span>${taskJson.description}</span>
         </div>
     </div>
     `
