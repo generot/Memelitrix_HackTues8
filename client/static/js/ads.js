@@ -11,7 +11,7 @@ function adCreate(taskJson, deletable = false) {
         <button class="${btnClass} task-open-button" onclick="openTaskMenu(this.parentElement);" id="title" tl="${taskJson.title}">${taskJson.title}(${taskJson.reward} €)</button>\n`
         +
         (deletable ? `<button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">X</button>
-        <button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adRemove(this)">✓</button>\n`
+        <button class="${btnClass}" style="float:right;vertical-align:text-top;font-size: 1.2em;top:-100px;text-decoration:none !important;color:#F83939 !important;" onclick="adComplete(this)">✓</button>\n`
                   : `\n`)
         +
         `<div class="${txtClass}" id="text2" name="deaznam" locationlong="${taskJson.location[0]}" locationlat=${taskJson.location[1]} takenby=${taskJson.taken_by}>
