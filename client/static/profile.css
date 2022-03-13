@@ -9,16 +9,10 @@
     margin-left: 200px;
 }
 
-.profile-container{
-    height:30vh;
-    width:30vw;
-    
-    clear:both;
-}
-
-
 .profile-container {
-    margin-bottom: 3em;
+  height:30vh;
+  width:30vw;
+  margin-bottom: 3em;
   clear: both;
 }
 
@@ -68,6 +62,7 @@
   overflow-wrap: break-word;
 }
 .adds-big-container {
+  margin-top:0;
   padding-left: 1vw;
   padding-right: 1vw;
   padding-top: 1vh;
@@ -273,6 +268,14 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.gei{
+  font-size:1.3em;
+  align-self: center;
+  margin-left:8.25vw;
+  margin-right:8.25vw;
+  margin-bottom:0;
+}
+
 @media (max-width: 768px) {
   .device-size {
     height: 55vh;
@@ -328,5 +331,10 @@ input[type="number"] {
 
   .profile-container{
     margin-left: 32.5vw;
+  }
+
+  .gei{
+    margin-left: 0vw !important;
+    margin-right: 0vw !important;
   }
 }
